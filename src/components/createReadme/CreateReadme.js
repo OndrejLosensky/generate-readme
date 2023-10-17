@@ -13,30 +13,41 @@ function CreateReadme() {
     const readmeContent = `<h1>${title}</h1>`;
 
     // Stáhne soubor s názvem README.MD 
-    const blob = new Blob([readmeContent], { type: 'text/markdown' });
-    saveAs(blob, 'README.md');
+
+    //const blob = new Blob([readmeContent], { type: 'text/markdown' });
+    //saveAs(blob, 'README.md');
 
     // Zobrazí obsah readme v prohlížeči
     setGeneratedReadme(DOMPurify.sanitize(readmeContent));
   };
 
   return (
-      <div>
-        <div className='w-[60%] h-[300px] bg-red-800 mx-auto justify-center items-center'>
-          <form className='flex items-center justify-center pt-8'>
-            <input 
-              className='text-white'
-              type="text"
-              placeholder="Název projektu"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-
-            <button className='text-white' type="button" onClick={generateReadme}>
-              Generate README
-            </button>
-          </form>
-          <div dangerouslySetInnerHTML={{ __html: generatedReadme }}></div>
+    <div>
+      <h1 className='uppercase text-4xl font-semibold text-center text-white py-6'> Readme generator</h1>
+      <div className='flex flex-col items-center justify-center h-screen'>
+          <div className='w-[40%] h-[300px] bg-red-800 rounded-2xl'>
+            <form className='flex flex-col items-center py-8'>
+              <div className='py-6'>
+                <input 
+                  className='text-white bg-yellow-300 py-2 px-2'
+                  type="text"
+                  placeholder="Název projektu"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                />
+              </div>
+              <div className='px-8'>
+                <button className='text-white px-6 py-3 bg-blue-500 rounded-xl hover:bg-blue-400 duration-300'
+                 type="button" onClick={generateReadme}>
+                  Vygeneruj README
+                </button>
+              </div>
+              
+            </form>
+            <div className='text-white text-center'>
+              <div dangerouslySetInnerHTML={{ __html: generatedReadme }}></div>
+            </div>
+          </div>
         </div>
       </div>
   );
