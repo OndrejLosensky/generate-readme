@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import DOMPurify from 'dompurify';
+import Title from "../../layouts/Title"
 
 
 function CreateReadme() {
@@ -28,6 +29,7 @@ function CreateReadme() {
           <div className='w-[40%] h-[300px] bg-red-800 rounded-2xl'>
             <form className='flex flex-col items-center py-8'>
               <div className='py-6'>
+                <Title text="Název projektu:"/>
                 <input 
                   className='text-white bg-yellow-300 py-2 px-2'
                   type="text"
