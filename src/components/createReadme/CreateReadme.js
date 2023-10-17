@@ -34,9 +34,9 @@ function CreateReadme() {
 
   return (
     <div>
-      <h1 className='uppercase text-4xl font-bold text-center text-white py-6'> Readme generator</h1>
+      <h1 className='uppercase text-4xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
       <div className='flex flex-col items-center  h-screen'>
-          <div className='w-[40%] h-[85%] bg-red-800 rounded-2xl'>
+          <div className='w-[40%] h-[85%] bg-cardBg rounded-2xl'>
             <form className='flex flex-col items-center py-8'>
               <div className='py-6'>
                 
@@ -113,14 +113,14 @@ function CreateReadme() {
 
               {/* Tlačítko*/}
               <div className='px-8 py-6'>
-                <button className='text-white px-6 py-3 bg-blue-500 rounded-xl hover:bg-blue-400 duration-300'
+                <button className='text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
                  type="button" onClick={generateReadme}>
                   Vygeneruj README
                 </button>
               </div>
               
             </form>
-            <div className='text-white text-center'>
+            <div className='text-white text-center absolute top-0 right-0 pr-8 pt-8'>
               <div dangerouslySetInnerHTML={{ __html: generatedReadme }}></div>
             </div>
           </div>
