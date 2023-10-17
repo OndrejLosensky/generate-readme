@@ -35,8 +35,8 @@ function CreateReadme() {
   return (
     <div>
       <h1 className='uppercase text-4xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
-      <div className='flex flex-col items-center  h-screen'>
-          <div className='w-[40%] h-[85%] bg-cardBg rounded-2xl'>
+      <div className='flex flex-row ml-24 h-screen'>
+          <div className='w-[40%] h-[85%] bg-cardBg rounded-2xl shadow-2xl'>
             <form className='flex flex-col items-center py-8'>
               <div className='py-6'>
                 
@@ -121,6 +121,13 @@ function CreateReadme() {
               
             </form>
             <div className='text-white text-center absolute top-0 right-0 pr-8 pt-8'>
+            
+            </div>
+          </div>
+
+          <div className='w-[40%] h-[85%] bg-buttonHover rounded-sm shadow-md absolute right-0 mr-24'>
+            <h2 className='font-bold text-3xl text-whiteText text-center py-4 border-b-2 border-bg-whiteText'> Výsledný README.MD</h2>
+            <div className='text-whiteText text-center'>
               <div dangerouslySetInnerHTML={{ __html: generatedReadme }}></div>
             </div>
           </div>
