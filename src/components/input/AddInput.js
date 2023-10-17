@@ -4,7 +4,7 @@ const AddInput = ({ placeholder, value, onChange }) => {
   return (
     <div className="mb-4">
       <input
-        className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-1 w-full"
+        className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
         type="text"
         placeholder={placeholder}
         value={value}
