@@ -43,7 +43,7 @@ function CreateReadme() {
       <div className='flex flex-row ml-24 h-screen'>
           <div className='w-[40%] h-[80%] bg-cardBg rounded-2xl shadow-2xl'>
             <form className='flex flex-col items-center py-4'>
-              <div className='py-6'>
+              <div className='py-2'>
                 
                 <Title text="Název projektu:"/>
                 <div className='w-[450px] rounded-md'>
