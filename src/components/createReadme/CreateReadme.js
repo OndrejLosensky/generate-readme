@@ -2,16 +2,21 @@ import React, { useState } from 'react';
 import { saveAs } from 'file-saver';
 import DOMPurify from 'dompurify';
 import Title from "../../layouts/Title"
+import AddInput from '../input/AddInput';
 
 
 function CreateReadme() {
   const [title, setTitle] = useState('');
+  const [shortDescription, setShortDescription] = useState('');
   // Přidat další UseState pro každý Input do Formu
   const [generatedReadme, setGeneratedReadme] = useState('');
 
   const generateReadme = () => {
     // Šablona readme | lze nastavit vzled
-    const readmeContent = `<h1>${title}</h1>`;
+    const readmeContent = `
+    <h1>${title}</h1>
+    <p>${shortDescription}</p>
+    `;
 
     // Stáhne soubor s názvem README.MD 
 
@@ -25,17 +30,21 @@ function CreateReadme() {
   return (
     <div>
       <h1 className='uppercase text-4xl font-semibold text-center text-white py-6'> Readme generator</h1>
-      <div className='flex flex-col items-center justify-center h-screen'>
-          <div className='w-[40%] h-[300px] bg-red-800 rounded-2xl'>
+      <div className='flex flex-col items-center  h-screen'>
+          <div className='w-[40%] h-[80%] bg-red-800 rounded-2xl'>
             <form className='flex flex-col items-center py-8'>
               <div className='py-6'>
                 <Title text="Název projektu:"/>
-                <input 
-                  className='text-white bg-yellow-300 py-2 px-2'
-                  type="text"
-                  placeholder="Název projektu"
+                <AddInput
+                  placeholder="Zde zadejte název"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                />
+                <Title text="Krátký popisek:"/>
+                <AddInput
+                  placeholder="krátký popisek"
+                  value={shortDescription}
+                  onChange={(e) => setShortDescription(e.target.value)}
                 />
               </div>
               <div className='px-8'>
