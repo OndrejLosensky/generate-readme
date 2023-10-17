@@ -20,8 +20,13 @@ function CreateReadme() {
   const generateReadme = () => {
     // Šablona readme | lze nastavit vzled
     const readmeContent = `
-    <h1>${title}</h1>
-    <p>${shortDescription}</p>
+    <h1 align="center"> Nadpis: ${title}</h1>
+    <p> Popisek: ${shortDescription}</p>
+    <p> Autor: ${author}</p>
+    <p> Verze: ${version1}</p>
+    <p> Datum: ${date}</p>
+    <p> Licence: ${license}</p>
+    <p> Kontakt: ${contact}</p>
     `;
 
     // Stáhne soubor s názvem README.MD 
@@ -36,8 +41,8 @@ function CreateReadme() {
     <div>
       <h1 className='uppercase text-4xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
       <div className='flex flex-row ml-24 h-screen'>
-          <div className='w-[40%] h-[85%] bg-cardBg rounded-2xl shadow-2xl'>
-            <form className='flex flex-col items-center py-8'>
+          <div className='w-[40%] h-[80%] bg-cardBg rounded-2xl shadow-2xl'>
+            <form className='flex flex-col items-center py-4'>
               <div className='py-6'>
                 
                 <Title text="Název projektu:"/>
@@ -112,7 +117,7 @@ function CreateReadme() {
               </div>
 
               {/* Tlačítko*/}
-              <div className='px-8 py-6'>
+              <div className='px-8'>
                 <button className='text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
                  type="button" onClick={generateReadme}>
                   Vygeneruj README
