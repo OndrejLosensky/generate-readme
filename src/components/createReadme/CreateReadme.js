@@ -58,10 +58,10 @@ function CreateReadme() {
             </div>
             <div className='h-2/3'>
               <p className='font-semibold text-whiteText text-left uppercase text-4xl '> 
-                The code
+                náhled
               </p>
-              <div className='text-center justify-center mt-4 h-[55%] bg-buttonColor
-              rounded-xl shadow-lg'>
+              <div className='text-center justify-center mt-4 h-[60%] border-2 border-whiteText
+              rounded-md shadow-lg bg-buttonColor'>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ function CreateReadme() {
           {/* Pravá část*/}
           <div className='w-[60%] h-[80%] rounded-2xl'>
             <form className='flex flex-col items-center py-4'>
-              <div className='py-2'>
+              <div className='py-0'>
                 
                 <Title text="Název projektu:"/>
                 <div className='w-[650px] rounded-md'>
@@ -149,11 +149,11 @@ function CreateReadme() {
               </div>
 
               {/* Tlačítko*/}
-              <div className='w-[650px] flex justify-end'>
+              <div className='w-[650px] flex justify-end pt-2'>
                 <button className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
                   Resetovat
                 </button>
-                <button className=' text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
+                <button className='border-2 border-buttonColor text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
                  type="button" onClick={generateReadme}>
                   Vygeneruj README
                 </button>
