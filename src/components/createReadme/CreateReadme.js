@@ -59,6 +59,9 @@ function CreateReadme() {
               <p className='font-semibold text-whiteText text-left uppercase text-4xl '> 
                 The code
               </p>
+              <div className='text-center justify-center mt-4 h-[55%] bg-buttonColor
+              rounded-xl shadow-lg'>
+              </div>
             </div>
           </div>
           <div className='w-[60%] h-[80%] rounded-2xl'>
