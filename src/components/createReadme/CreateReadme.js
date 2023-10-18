@@ -22,6 +22,8 @@ function CreateReadme() {
   const generateReadme = () => {
     // Šablona readme | lze nastavit vzled
     const readmeContent = `
+    # Toto je testovací Text #
+    * test *
     <h1 align="center"> Nadpis: ${title}</h1>
     <p> Popisek: ${shortDescription}</p>
     <p> Autor: ${author}</p>
@@ -66,7 +68,7 @@ function CreateReadme() {
               rounded-md shadow-lg bg-buttonColor'>
                 {generatedReadme && (
                   <div className="markdown-content p-4">
-                    <ReactMarkdown>{generatedReadme}</ReactMarkdown>
+                    <ReactMarkdown>{generatedReadme}</ReactMarkdown> 
                   </div>
                 )}
               </div>
