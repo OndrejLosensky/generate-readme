@@ -41,7 +41,8 @@ function CreateReadme() {
     <div>
       <h1 className='uppercase text-4xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
       <div className='flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
-          <div className='w-[40%] h-[80%]flex flex-col pl-8'>
+          {/* Levá část*/}
+          <div className='w-[40%] h-[80%]flex flex-col pl-12'>
             <div className='h-1/3'>
               <h2 className= 'text-3xl font-semibold text-whiteText text-left pt-4'>
                 Tips for editing README:
@@ -64,6 +65,8 @@ function CreateReadme() {
               </div>
             </div>
           </div>
+
+          {/* Pravá část*/}
           <div className='w-[60%] h-[80%] rounded-2xl'>
             <form className='flex flex-col items-center py-4'>
               <div className='py-2'>
@@ -77,14 +80,6 @@ function CreateReadme() {
                   />
                 </div>
 
-                <div>
-                  <Title text="Krátký popisek:"/>
-                  <AddInput
-                    placeholder="krátký popisek"
-                    value={shortDescription}
-                    onChange={(e) => setShortDescription(e.target.value)}
-                  />
-                </div>
                 {/* TŘETÍ ŘÁDEK */}
                 <div className='flex flex-row'>
                   <div className='w-[46%]'>
@@ -135,16 +130,28 @@ function CreateReadme() {
                   onChange={(e) => setContact(e.target.value)}
                   />
                 </div>
+                <div>
+                  <Title text="Krátký popisek:"/>
+                  <AddInput
+                    placeholder="krátký popisek"
+                    value={shortDescription}
+                    onChange={(e) => setShortDescription(e.target.value)}
+                  />
+                </div>
 
 
               </div>
 
               {/* Tlačítko*/}
-              <div className='px-8'>
-                <button className='text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
+              <div className='w-[650px] flex justify-end'>
+                <button className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
+                  Resetovat
+                </button>
+                <button className=' text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
                  type="button" onClick={generateReadme}>
                   Vygeneruj README
                 </button>
+               
               </div>
               
             </form>
