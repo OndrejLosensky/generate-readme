@@ -3,6 +3,8 @@ import { saveAs } from 'file-saver';
 import DOMPurify from 'dompurify';
 import Title from "../../layouts/Title"
 import AddInput from '../input/AddInput';
+import ReactMarkdown from 'react-markdown';
+
 
 
 function CreateReadme() {
@@ -62,6 +64,11 @@ function CreateReadme() {
               </p>
               <div className='text-center justify-center mt-4 h-[60%] border-2 border-whiteText
               rounded-md shadow-lg bg-buttonColor'>
+                {generatedReadme && (
+                  <div className="markdown-content p-4">
+                    <ReactMarkdown>{generatedReadme}</ReactMarkdown>
+                  </div>
+                )}
               </div>
             </div>
           </div>
