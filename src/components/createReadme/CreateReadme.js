@@ -15,15 +15,20 @@ function CreateReadme() {
   const [license, setLicense] = useState('');
   const [contact, setContact] = useState('');
 
+  const defaultReadmeContent = `
+  # Toto je defaultní šablona #
 
-  const [generatedReadme, setGeneratedReadme] = useState('');
+    - obsah lze jednoduše nastavit
+    - soubor lze následně upravit i v kodu
+    `;
+
+  const [generatedReadme, setGeneratedReadme] = useState(defaultReadmeContent);
+
 
   const generateReadme = () => {
     const readmeContent = `
-  # *${title}*
-  
+  # **${title}** #
   ${shortDescription}
-  
   **Autor:** 
   ${author}
   
@@ -66,7 +71,7 @@ function CreateReadme() {
               <p className='font-semibold text-whiteText text-left uppercase text-4xl '> 
                 náhled
               </p>
-              <div className='text-center justify-center mt-4 h-[60%] border-2 border-whiteText
+              <div className='text-left text-whiteText  justify-center mt-4 h-[60%] border-2 border-whiteText
               rounded-md shadow-lg bg-buttonColor'>
                 {generatedReadme && (
                   <div className="markdown-content p-4">
