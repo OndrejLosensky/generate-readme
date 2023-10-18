@@ -27,22 +27,22 @@ function CreateReadme() {
 
   const generateReadme = () => {
     const readmeContent = `
-  # **${title}** #
-  ${shortDescription}
-  **Autor:** 
-  ${author}
-  
-  **Verze:** 
-  ${version1}
-  
-  **Datum:** 
-  ${date}
-  
-  **Licence:** 
-  ${license}
-  
-  **Kontakt:** 
-  ${contact}
+    # **${title}** #
+    ###  ${shortDescription} ###
+    ###  **Autor:** ###
+      ${author}
+      
+    ### **Verze:** ###
+      ${version1}
+      
+    ###  **Datum:** ###
+      ${date}
+      
+    ###  **Licence:** ###
+      ${license}
+      
+    ### **Kontakt:** ###
+      ${contact}
     `;
   
     setGeneratedReadme(readmeContent);
