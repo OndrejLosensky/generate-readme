@@ -1,5 +1,5 @@
 # Toto je testovací Text #
-* test *
+*test*
 <h1 align="center"> Nadpis: </h1>
 <p> Popisek: </p>
 <p> Autor: </p>
