@@ -97,6 +97,7 @@ function CreateReadme() {
                     placeholder="Zde zadejte název"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
+                    type={"text"}
                   />
                 </div>
 
@@ -108,6 +109,7 @@ function CreateReadme() {
                     placeholder="vaše jméno"
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
+                    type={"text"}
                     />
                   </div>
                   <div className='w-[8%]'></div>
@@ -117,6 +119,7 @@ function CreateReadme() {
                     placeholder="Aktuální verze"
                     value={version1}
                     onChange={(e) => setVersion1(e.target.value)}
+                    type={"number"}
                     />
                   </div>
                 </div>
@@ -128,6 +131,7 @@ function CreateReadme() {
                     placeholder="Datum"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
+                    type={"date"}
                     />
                   </div>
                   <div className='w-[8%]'></div>
@@ -137,6 +141,7 @@ function CreateReadme() {
                     placeholder="Typ licence"
                     value={license}
                     onChange={(e) => setLicense (e.target.value)}
+                    type={"text"} // checkbox pro výběr licence
                     />
                   </div>
                 </div>
@@ -148,6 +153,8 @@ function CreateReadme() {
                   placeholder="Váš e-mail"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
+                  type={"email"}
+                  required
                   />
                 </div>
 
