@@ -130,13 +130,19 @@ function CreateReadme() {
                   onChange={(e) => setContact(e.target.value)}
                   />
                 </div>
+
+                {/* TEXT AREA pro popisek */}
                 <div>
                   <Title text="Krátký popisek:"/>
-                  <AddInput
-                    placeholder="krátký popisek"
-                    value={shortDescription}
-                    onChange={(e) => setShortDescription(e.target.value)}
-                  />
+                  <textarea
+                  className="text-darkText resize-none bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
+                  placeholder="Krátký popisek"
+                  rows={3}
+                  value={shortDescription}
+                  onChange={(e) => setShortDescription(e.target.value)}
+                  >
+
+                  </textarea>
                 </div>
 
 
