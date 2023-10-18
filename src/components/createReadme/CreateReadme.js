@@ -57,7 +57,7 @@ function CreateReadme() {
           {/* Levá část*/}
           <div className='w-[40%] h-[80%]flex flex-col pl-12'>
             <div className='h-1/3'>
-              <h2 className= 'text-3xl font-semibold text-whiteText text-left pt-4'>
+              <h2 className= 'text-xl font-semibold text-whiteText text-left pt-4'>
                 Tips for editing README:
               </h2>
               <p className='text-whiteText text-sm text-left pt-4'>
