@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { saveAs } from 'file-saver';
-import DOMPurify from 'dompurify';
 import Title from "../../layouts/Title"
 import AddInput from '../input/AddInput';
 import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 
 
 
@@ -20,25 +19,25 @@ function CreateReadme() {
   const [generatedReadme, setGeneratedReadme] = useState('');
 
   const generateReadme = () => {
-    // Šablona readme | lze nastavit vzled
+    // Create the Markdown content with the desired formatting
     const readmeContent = `
-    # Toto je testovací Text #
-    * test *
-    <h1 align="center"> Nadpis: ${title}</h1>
-    <p> Popisek: ${shortDescription}</p>
-    <p> Autor: ${author}</p>
-    <p> Verze: ${version1}</p>
-    <p> Datum: ${date}</p>
-    <p> Licence: ${license}</p>
-    <p> Kontakt: ${contact}</p>
+  # **Nadpis:** *${title}*
+  
+  ${shortDescription}
+  
+  **Autor:** ${author}
+  
+  **Verze:** ${version1}
+  
+  **Datum:** ${date}
+  
+  **Licence:** ${license}
+  
+  **Kontakt:** ${contact}
     `;
-
-    // Stáhne soubor s názvem README.MD 
-    //const blob = new Blob([readmeContent], { type: 'text/markdown' });
-    //saveAs(blob, 'README.md');
-
-    // Zobrazí obsah readme v prohlížeči
-    setGeneratedReadme(DOMPurify.sanitize(readmeContent));
+  
+    // Update the generatedReadme state to display the formatted content
+    setGeneratedReadme(readmeContent);
   };
 
   return (
@@ -68,7 +67,9 @@ function CreateReadme() {
               rounded-md shadow-lg bg-buttonColor'>
                 {generatedReadme && (
                   <div className="markdown-content p-4">
-                    <ReactMarkdown>{generatedReadme}</ReactMarkdown> 
+                    <ReactMarkdown remarkPlugins={[gfm]}>
+                      {generatedReadme}
+                    </ReactMarkdown>
                   </div>
                 )}
               </div>
