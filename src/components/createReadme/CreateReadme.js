@@ -16,10 +16,12 @@ function CreateReadme() {
   const [contact, setContact] = useState('');
 
   const defaultReadmeContent = `
-  # Toto je defaultní šablona #
+# **Toto je defaultní šablona** #
 
-    - obsah lze jednoduše nastavit
-    - soubor lze následně upravit i v kodu
+- *obsah lze snadno nastavit*
+- ~~soubor lze následně upravit i v kodu~~
+### změna velikosti fontu ###
+###### nejmenší heading ######
     `;
 
   const [generatedReadme, setGeneratedReadme] = useState(defaultReadmeContent);
@@ -27,21 +29,21 @@ function CreateReadme() {
 
   const generateReadme = () => {
     const readmeContent = `
-    # **${title}** #
-    ###  ${shortDescription} ###
-    ###  **Autor:** ###
+# **${title}** #
+###  ${shortDescription} ###
+###  **Autor:** ###
       ${author}
       
-    ### **Verze:** ###
+### **Verze:** ###
       ${version1}
       
-    ###  **Datum:** ###
+###  **Datum:** ###
       ${date}
       
-    ###  **Licence:** ###
+###  **Licence:** ###
       ${license}
       
-    ### **Kontakt:** ###
+### **Kontakt:** ###
       ${contact}
     `;
   
