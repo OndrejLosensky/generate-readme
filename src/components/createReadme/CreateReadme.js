@@ -40,8 +40,28 @@ function CreateReadme() {
   return (
     <div>
       <h1 className='uppercase text-4xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
-      <div className='flex flex-row justify-start ml-24 h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
-          <div className='w-[40%] h-[80%] rounded-2xl'>
+      <div className='flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
+          <div className='w-[40%] h-[80%]flex flex-col pl-8'>
+            <div className='h-1/3'>
+              <h2 className= 'text-3xl font-semibold text-whiteText text-left pt-4'>
+                Tips for editing README:
+              </h2>
+              <p className='text-whiteText text-sm text-left pt-4'>
+                Pro <span className='font-bold'> zvýraznění textu</span> obklopte slovo dvěmi * např(**Nadpis**) <br/>
+                Pro vytvoření<span className='italic'> kurzívy</span> obklopte slovo jednou * např(*Jméno*) <br/>
+                Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
+                Pro vytvoření <span className='text-buttonColor underline'> odkazu</span> vložte text-link do hranatých závorek a odkaz do kulatých <br/>
+                např. ([Klikni](https://link.com)) <br/>
+                # funguje jako heading tag --  # = h1 | ###### = h6
+              </p>
+            </div>
+            <div className='h-2/3'>
+              <p className='font-semibold text-whiteText text-left uppercase text-4xl '> 
+                The code
+              </p>
+            </div>
+          </div>
+          <div className='w-[60%] h-[80%] rounded-2xl'>
             <form className='flex flex-col items-center py-4'>
               <div className='py-2'>
                 
@@ -129,6 +149,7 @@ function CreateReadme() {
             
             </div>
           </div>
+        
         </div>
       </div>
   );
