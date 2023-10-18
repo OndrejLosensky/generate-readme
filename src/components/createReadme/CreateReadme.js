@@ -19,24 +19,27 @@ function CreateReadme() {
   const [generatedReadme, setGeneratedReadme] = useState('');
 
   const generateReadme = () => {
-    // Create the Markdown content with the desired formatting
     const readmeContent = `
-  # **Nadpis:** *${title}*
+  # *${title}*
   
   ${shortDescription}
   
-  **Autor:** ${author}
+  **Autor:** 
+  ${author}
   
-  **Verze:** ${version1}
+  **Verze:** 
+  ${version1}
   
-  **Datum:** ${date}
+  **Datum:** 
+  ${date}
   
-  **Licence:** ${license}
+  **Licence:** 
+  ${license}
   
-  **Kontakt:** ${contact}
+  **Kontakt:** 
+  ${contact}
     `;
   
-    // Update the generatedReadme state to display the formatted content
     setGeneratedReadme(readmeContent);
   };
 
