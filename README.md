@@ -1,16 +1,16 @@
 # **${title}** #
 ###  ${shortDescription} ###
-  **Autor:** 
+###  **Autor:** ###
   ${author}
   
-  **Verze:** 
+### **Verze:** ###
   ${version1}
   
-  **Datum:** 
+###  **Datum:** ###
   ${date}
   
-  **Licence:** 
+###  **Licence:** ###
   ${license}
   
-  **Kontakt:** 
+### **Kontakt:** ###
   ${contact}
