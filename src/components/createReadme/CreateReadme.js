@@ -16,22 +16,28 @@ function CreateReadme() {
   const [contact, setContact] = useState('');
 
   const generatedReadmeRef = useRef(null);
+  // proměnná pro určení stavu kopírování
+  const [copied, setCopied] = useState(false);
   const copyToClipboard = () => {
     const readmeContent = generatedReadmeRef.current.textContent;
 
-    // Create a text area to select and copy the content
     const textArea = document.createElement('textarea');
     textArea.value = readmeContent;
 
-    // Append the text area to the document and select its content
     document.body.appendChild(textArea);
     textArea.select();
 
-    // Copy the content to the clipboard
     document.execCommand('copy');
 
-    // Remove the text area
     document.body.removeChild(textArea);
+
+    // Po spuštení funkce nastaví SetCopied na true
+    setCopied(true);
+
+    // Po uplynulé době vzhled vyresetuje
+    setTimeout(() => {
+      setCopied(false);
+    }, 5000); // resetuje po 5 vteřinách
   };
 
   const centerAlignCSS = {
@@ -234,11 +240,14 @@ ${shortDescription}
             <div className='flex flex-row justify-between'>
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
               <div className='flex items-center justify-end'>
-                <button className='px-6 py-3 text-whiteText bg-buttonColor rounded-lg
-                hover:bg-buttonHover duration-300'
-                onClick={copyToClipboard}>
-                  Kopírovat
-                </button>
+              <button
+                className={`px-6 py-3 text-whiteText rounded-lg ${
+                  copied ? 'bg-copiedColor' : 'bg-buttonColor'
+                }`}
+                onClick={copyToClipboard}
+              >
+                {copied ? 'Zkopírováno' : 'Kopírovat'} {/* mění text při aktivním zkopírování | automaticky se změní zpět*/}
+              </button>
               </div>
             </div>
                     
