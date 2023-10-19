@@ -1,21 +1,18 @@
-# **Test** #
+
+# **PRvní projekty** #
 ###  Krátký popisek: ###
-toto je popis
-test zda funguje více řádku
-doufám, že ano.
-prosím 
+toto je moje první vygenerované README 
 ###  **Autor:** ###
-  já
+  losensky
       
 ### **Verze:** ###
-  2
+  
       
 ###  **Licence:** ###
-  1
+  none
       
 ### **Kontakt:** ###
   losenskyondrej@gmail.com
 
 
-    
- <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-19 </p>
+     <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-19 </p>

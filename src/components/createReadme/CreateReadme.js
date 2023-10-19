@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Title from "../../layouts/Title"
 import AddInput from '../input/AddInput';
 import ReactMarkdown from 'react-markdown';
@@ -14,6 +14,25 @@ function CreateReadme() {
   const [date, setDate] = useState('');
   const [license, setLicense] = useState('');
   const [contact, setContact] = useState('');
+
+  const generatedReadmeRef = useRef(null);
+  const copyToClipboard = () => {
+    const readmeContent = generatedReadmeRef.current.textContent;
+
+    // Create a text area to select and copy the content
+    const textArea = document.createElement('textarea');
+    textArea.value = readmeContent;
+
+    // Append the text area to the document and select its content
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    // Copy the content to the clipboard
+    document.execCommand('copy');
+
+    // Remove the text area
+    document.body.removeChild(textArea);
+  };
 
   const centerAlignCSS = {
     textAlign: 'center',
@@ -216,7 +235,8 @@ ${shortDescription}
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
               <div className='flex items-center justify-end'>
                 <button className='px-6 py-3 text-whiteText bg-buttonColor rounded-lg
-                hover:bg-buttonHover duration-300'>
+                hover:bg-buttonHover duration-300'
+                onClick={copyToClipboard}>
                   Kopírovat
                 </button>
               </div>
@@ -225,7 +245,7 @@ ${shortDescription}
             <div className='h-1/2 flex justify-center items-start'>
               <div className='bg-buttonColor rounded-lg h-[400px] w-full overflow-auto px-6'>
                 <pre>
-                  <code>
+                  <code ref={generatedReadmeRef}>
                     {generatedReadme}
                     <div style={centerAlignCSS}>
                       <p> &lt;p align="center"&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/p&gt;</p>
