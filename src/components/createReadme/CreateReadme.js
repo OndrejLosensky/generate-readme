@@ -37,14 +37,13 @@ function CreateReadme() {
 ### **Verze:** ###
   ${version1}
       
-###  **Datum:** ###
-  ${date}
-      
 ###  **Licence:** ###
   ${license}
       
 ### **Kontakt:** ###
   ${contact}
+
+####### název souboru: README.MD | datum vytvoření: ${date} ######
     `;
   
     setGeneratedReadme(readmeContent);
@@ -201,16 +200,30 @@ function CreateReadme() {
         
         </div>
         {/* Sekce pro zobrazení výstupu*/}
-        <h2 className='uppercase text-2xl font-semibold text-whiteText text-center py-6'> code with readme data </h2>
-        <div className='h-screen flex justify-center items-start'>
-          <div className='bg-buttonColor h-[600px] w-1/2 overflow-auto'>
-          <pre>
-            <code>
-              {generatedReadme}
-            </code>
-          </pre>
+        <div className='w-full h-[80%] mb-12 flex justify-center items-center'>
+          <div className='w-1/2'>
+            <div className='flex flex-row justify-between'>
+              <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
+              <div className='flex items-center justify-end'>
+                <button className='px-6 py-3 text-whiteText bg-buttonColor rounded-lg
+                hover:bg-buttonHover duration-300'>
+                  Kopírovat
+                </button>
+              </div>
+            </div>
+                    
+            <div className='h-1/2 flex justify-center items-start'>
+              <div className='bg-buttonColor rounded-lg h-[400px] w-full overflow-auto px-6'>
+                <pre>
+                  <code>
+                    {generatedReadme}
+                  </code>
+                </pre>
+              </div>
+            </div>
           </div>
         </div>
+
 
         
       </div>
