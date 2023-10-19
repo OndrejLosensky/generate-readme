@@ -13,6 +13,6 @@
 ### **Kontakt:** ###
   
 
-<div style="text-align: center;">
+<p style="text-align: center;">
   ###### název souboru: README.MD | datum vytvoření:  ######
-</div>
+</p>
