@@ -228,7 +228,7 @@ ${shortDescription}
                   <code>
                     {generatedReadme}
                     <div style={centerAlignCSS}>
-                      <p> &lt;h4 align="center"&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/h4&gt;</p>
+                      <p> &lt;p align="center"&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/p&gt;</p>
                     </div>
                   </code>
                 </pre>
