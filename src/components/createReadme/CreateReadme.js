@@ -32,19 +32,19 @@ function CreateReadme() {
 # **${title}** #
 ###  ${shortDescription} ###
 ###  **Autor:** ###
-      ${author}
+  ${author}
       
 ### **Verze:** ###
-      ${version1}
+  ${version1}
       
 ###  **Datum:** ###
-      ${date}
+  ${date}
       
 ###  **Licence:** ###
-      ${license}
+  ${license}
       
 ### **Kontakt:** ###
-      ${contact}
+  ${contact}
     `;
   
     setGeneratedReadme(readmeContent);
@@ -52,11 +52,17 @@ function CreateReadme() {
 
   return (
     <div>
-      <h1 className='uppercase text-4xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
+      <h1 className='uppercase text-5xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
+      {/* Sekce s popiskem */}
+      <div>
+        <p className='text-whiteText text-xl text-center py-8'>
+          Toto je popisek
+        </p>
+      </div>
       <div className='flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
           {/* Levá část*/}
           <div className='w-[40%] h-[80%]flex flex-col pl-12'>
-            <div className='h-1/3'>
+            <div className='h-[28%]'>
               <h2 className= 'text-xl font-semibold text-whiteText text-left pt-4'>
                 Tips for editing README:
               </h2>
@@ -73,7 +79,7 @@ function CreateReadme() {
               <p className='font-semibold text-whiteText text-left uppercase text-4xl '> 
                 náhled
               </p>
-              <div className='text-left text-whiteText  justify-center mt-4 h-[60%] border-2 border-whiteText
+              <div className='text-left text-whiteText  justify-center mt-4 h-[70%] border-2 border-whiteText
               rounded-md shadow-lg bg-buttonColor'>
                 {generatedReadme && (
                   <div className="markdown-content p-4">
@@ -194,6 +200,17 @@ function CreateReadme() {
           </div>
         
         </div>
+        {/* Sekce pro zobrazení výstupu*/}
+        <h2 className='uppercase text-2xl font-semibold text-whiteText text-center py-6'> code with readme data </h2>
+        <div className='h-screen flex justify-center items-start'>
+          <div className='bg-buttonColor h-[600px] w-1/2'>
+            <p>
+              This is the content inside the centered box.
+            </p>
+          </div>
+        </div>
+
+        
       </div>
   );
 }
