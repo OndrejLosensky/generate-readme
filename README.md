@@ -1,4 +1,3 @@
-
 # **** #
 ###   ###
 ###  **Autor:** ###
@@ -13,6 +12,4 @@
 ### **Kontakt:** ###
   
 
-<p style="text-align: center;">
-  ###### název souboru: README.MD | datum vytvoření:  ######
-</p>
+<center>###### název souboru: README.MD | datum vytvoření:  ######</center>

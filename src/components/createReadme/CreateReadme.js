@@ -43,9 +43,8 @@ function CreateReadme() {
 ### **Kontakt:** ###
   ${contact}
 
-<div style="text-align: center;">
-  ###### název souboru: README.MD | datum vytvoření: ${date} ######
-</div>
+<center>###### název souboru: README.MD | datum vytvoření: ${date} ######</center>
+
     `;
   
     setGeneratedReadme(readmeContent);
