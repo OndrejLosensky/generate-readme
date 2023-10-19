@@ -1,17 +1,21 @@
-# **Toto je první projekt** #
-###  toto je první generování celého readme pro projekt ###
+# **Test** #
+###  Krátký popisek: ###
+toto je popis
+test zda funguje více řádku
+doufám, že ano.
+prosím 
 ###  **Autor:** ###
-  Ondřej
+  já
       
 ### **Verze:** ###
-  
+  2
       
 ###  **Licence:** ###
-  None
+  1
       
 ### **Kontakt:** ###
   losenskyondrej@gmail.com
 
 
     
- <h4 align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-18 </h4>
+ <h4 align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-19 </h4>

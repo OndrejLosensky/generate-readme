@@ -35,7 +35,8 @@ function CreateReadme() {
   const generateReadme = () => {
     const readmeContent = `
 # **${title}** #
-###  ${shortDescription} ###
+###  Krátký popisek: ###
+${shortDescription} 
 ###  **Autor:** ###
   ${author}
       
