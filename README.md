@@ -14,4 +14,4 @@
 
 
     
- <h1> název souboru: Readme.md |  datum vytvoření: 2023-10-18 </h1>
+ <h4 align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-18 </h4>
