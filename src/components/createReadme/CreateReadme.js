@@ -15,6 +15,11 @@ function CreateReadme() {
   const [license, setLicense] = useState('');
   const [contact, setContact] = useState('');
 
+  const centerAlignCSS = {
+    textAlign: 'center',
+  };
+
+
   const defaultReadmeContent = `
 # **Toto je defaultní šablona** #
 
@@ -43,7 +48,6 @@ function CreateReadme() {
 ### **Kontakt:** ###
   ${contact}
 
-<center>###### název souboru: README.MD | datum vytvoření: ${date} ######</center>
 
     `;
   
@@ -86,6 +90,10 @@ function CreateReadme() {
                     <ReactMarkdown remarkPlugins={[gfm]}>
                       {generatedReadme}
                     </ReactMarkdown>
+                    {/* Center-align the last line */}
+                    <div style={centerAlignCSS}>
+                      <p> název souboru: Readme.md |  datum vytvoření: {date}</p>
+                    </div>
                   </div>
                 )}
               </div>
