@@ -1,16 +1,18 @@
-# **${title}** #
-###  ${shortDescription} ###
+
+
+# **test** #
+###  toto je testování generování README ###
 ###  **Autor:** ###
-  ${author}
-  
+  já
+      
 ### **Verze:** ###
-  ${version1}
-  
+  2
+      
 ###  **Datum:** ###
-  ${date}
-  
+  2023-10-20
+      
 ###  **Licence:** ###
-  ${license}
-  
+  none
+      
 ### **Kontakt:** ###
-  ${contact}
+  losenskyondrej@gmail.com

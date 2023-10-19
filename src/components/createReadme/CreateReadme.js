@@ -203,10 +203,12 @@ function CreateReadme() {
         {/* Sekce pro zobrazení výstupu*/}
         <h2 className='uppercase text-2xl font-semibold text-whiteText text-center py-6'> code with readme data </h2>
         <div className='h-screen flex justify-center items-start'>
-          <div className='bg-buttonColor h-[600px] w-1/2'>
-            <p>
-              This is the content inside the centered box.
-            </p>
+          <div className='bg-buttonColor h-[600px] w-1/2 overflow-auto'>
+          <pre>
+            <code>
+              {generatedReadme}
+            </code>
+          </pre>
           </div>
         </div>
 
