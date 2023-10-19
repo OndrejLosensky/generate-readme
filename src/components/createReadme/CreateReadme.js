@@ -227,7 +227,7 @@ function CreateReadme() {
                   <code>
                     {generatedReadme}
                     <div style={centerAlignCSS}>
-                      <p> &lt;h1&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/h1&gt;</p>
+                      <p> &lt;h4 align="center"&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/h4&gt;</p>
                     </div>
                   </code>
                 </pre>
