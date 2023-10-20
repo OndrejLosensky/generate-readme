@@ -136,21 +136,47 @@ ${newShortDescription}
 
   return (
     <div>
-      <h1 className='uppercase text-5xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
-      {/* Sekce s popiskem */}
-      <div className='h-screen'>
-        <p className='text-whiteText text-xl text-center justify-center font-light border-b-2 border-whiteText'>
-          <p> Vítejte v generátoru README.MD </p>
-          <p> jednoduchým způsobem vytvořte jednoduché readme pro váš profil </p>
-          <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
-          <p> podrobnou dokumentaci k této aplikaci naleznete kliknutím <span className='font-semibold underline text-buttonColor cursor-pointer'>zde</span></p>
-        </p>
+      
+      {/* Sekce s popiskem | full page */}
+      <div className='h-screen flex flex-col justify-between'>
+        <div>
+          <h1 className='uppercase text-5xl font-bold text-center text-whiteText py-6'>Readme generator</h1>
+          <div className='text-whiteText text-xl text-center justify-center font-light pt-48'>
+            <p> Vítejte v generátoru README.MD </p>
+            <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
+            <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
+            <div className='pt-4'>
+              <button className='px-6 py-3 border-buttonColor border-2 rounded-lg hover:-translate-y-1 duration-300'>
+                Dokumentace
+              </button>
+              <button className='px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-lg ml-4 hover:-translate-y-1 duration-300'
+              onClick={() => {
+                document.documentElement.classList.add('scroll-animation');
+                const headingElement = document.getElementById('firstBorder');
+                if (headingElement) {
+                  headingElement.scrollIntoView({
+                    behavior: 'smooth',
+                    
+                  });
+                }
+                setTimeout(() => {
+                  document.documentElement.classList.remove('scroll-animation');
+                }, 3000); 
+              }}
+              >
+                Pokračovat
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id='firstBorder' className='w-[100%] border-b-2 mx-auto border-whiteText justify-center'></div>
       </div>
-      <div className='flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
+
+      <div className='pt-8 flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
           {/* Levá část*/}
           <div className='w-[40%] h-[80%]flex flex-col pl-12'>
             <div className='h-[28%]'>
-              <h2 className= 'text-xl font-semibold text-whiteText text-left pt-4'>
+              <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
                 Tips for editing README:
               </h2>
               <p className='text-whiteText text-sm text-left pt-4'>
