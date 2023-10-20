@@ -138,8 +138,8 @@ ${newShortDescription}
     <div>
       <h1 className='uppercase text-5xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
       {/* Sekce s popiskem */}
-      <div>
-        <p className='text-whiteText text-xl text-center pt-8 pb-[600px] font-light'>
+      <div className='h-screen'>
+        <p className='text-whiteText text-xl text-center justify-center font-light border-b-2 border-whiteText'>
           <p> Vítejte v generátoru README.MD </p>
           <p> jednoduchým způsobem vytvořte jednoduché readme pro váš profil </p>
           <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
