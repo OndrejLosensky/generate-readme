@@ -294,17 +294,14 @@ ${newShortDescription}
                     
             <div className='h-1/2 flex justify-center items-start'>
               <div className='bg-buttonColor rounded-lg h-[400px] w-full overflow-auto px-6'>
-              {generatedReadme && (
-                <div className="markdown-content p-4">
-                  <ReactMarkdown remarkPlugins={[gfm]}>
+              <pre>
+                  <code ref={generatedReadmeRef}>
                     {generatedReadme}
-                  </ReactMarkdown>
-                  {/* Center-align the last line */}
-                  <div style={centerAlignCSS}>
-                    <p> název souboru: Readme.md |  datum vytvoření: {date}</p>
-                  </div>
-                </div>
-              )}
+                    <div style={centerAlignCSS}>
+                      <p> &lt;p align="center"&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/p&gt;</p>
+                    </div>
+                  </code>
+                </pre>
               </div>
             </div>
             
