@@ -46,12 +46,20 @@ function CreateReadme() {
 
 
   const defaultReadmeContent = `
-# **Toto je defaultní šablona** #
 
-- *obsah lze snadno nastavit*
-- ~~soubor lze následně upravit i v kodu~~
-### změna velikosti fontu ###
-###### nejmenší heading ######
+  ###  Krátký popisek: ###
+
+  ###  **Autor:** ###
+
+
+  ### **Verze:** ###
+
+        
+  ###  **Licence:** ###
+
+
+  ### **Kontakt:** ###
+
     `;
 
   const [generatedReadme, setGeneratedReadme] = useState(defaultReadmeContent);
@@ -121,13 +129,21 @@ ${newShortDescription}
     setGeneratedReadme(readmeContent);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    generateReadme(); 
+  };
+
   return (
     <div>
       <h1 className='uppercase text-5xl font-bold text-center text-whiteText py-6'> Readme generator</h1>
       {/* Sekce s popiskem */}
       <div>
-        <p className='text-whiteText text-xl text-center py-8'>
-          Toto je popisek
+        <p className='text-whiteText text-xl text-center pt-8 pb-[600px] font-light'>
+          <p> Vítejte v generátoru README.MD </p>
+          <p> jednoduchým způsobem vytvořte jednoduché readme pro váš profil </p>
+          <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
+          <p> podrobnou dokumentaci k této aplikaci naleznete kliknutím <span className='font-semibold underline text-buttonColor cursor-pointer'>zde</span></p>
         </p>
       </div>
       <div className='flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
@@ -169,7 +185,7 @@ ${newShortDescription}
 
           {/* Pravá část*/}
           <div className='w-[60%] h-[80%] rounded-2xl'>
-            <form className='flex flex-col items-center py-4'>
+            <form className='flex flex-col items-center py-4' onSubmit={handleSubmit}>
               <div className='py-0'>
                 
                 <Title text="Název projektu:"/>
@@ -277,7 +293,7 @@ ${newShortDescription}
         </div>
         {/* Sekce pro zobrazení výstupu*/}
         <div className='w-full h-[80%] mb-12 flex justify-center items-center'>
-          <div className='w-1/2'>
+          <div className='w-2/3'>
             <div className='flex flex-row justify-between'>
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
               <div className='flex items-center justify-end'>
