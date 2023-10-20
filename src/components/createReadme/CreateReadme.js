@@ -56,23 +56,64 @@ function CreateReadme() {
 
   const [generatedReadme, setGeneratedReadme] = useState(defaultReadmeContent);
 
+  const handleTitleChange = (e) => {
+    const newTitle = e.target.value;
+    setTitle(newTitle);
+    generateReadme(newTitle, shortDescription, author, version1, license, contact);
+  };
 
-  const generateReadme = () => {
+  const handleShortDescriptionChange = (e) => {
+    const newShortDescription = e.target.value
+    setShortDescription(newShortDescription);
+    generateReadme(title, newShortDescription, author, version1, license, contact); 
+  };
+
+  const handleAuthorChange = (e) => {
+    const newAuthor = e.target.value
+    setAuthor(newAuthor);
+    generateReadme(title, shortDescription, newAuthor, version1, license, contact); 
+  };
+
+  const handleVersion1Change = (e) => {
+    const newVersion = e.target.value
+    setVersion1(newVersion);
+    generateReadme(title, shortDescription, author, newVersion, license, contact); 
+  };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+    generateReadme(); 
+  };
+
+  const handleLicenseChange = (e) => {
+    const newLicence = e.target.value
+    setLicense(newLicence);
+    generateReadme(title, shortDescription, author, version1, newLicence, contact); 
+  };
+
+  const handleContactChange = (e) => {
+    const newContact = e.target.value
+    setContact(newContact);
+    generateReadme(title, shortDescription, author, version1, license, newContact); 
+  };
+
+
+  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion, newLicence, newContact) => {
     const readmeContent = `
-# **${title}** #
+# **${newTitle}** #
 ###  Krátký popisek: ###
-${shortDescription} 
+${newShortDescription} 
 ###  **Autor:** ###
-  ${author}
+  ${newAuthor}
       
 ### **Verze:** ###
-  ${version1}
+  ${newVersion}
       
 ###  **Licence:** ###
-  ${license}
+  ${newLicence}
       
 ### **Kontakt:** ###
-  ${contact}
+  ${newContact}
 
 
     `;
@@ -136,7 +177,7 @@ ${shortDescription}
                   <AddInput
                     placeholder="Zde zadejte název"
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={handleTitleChange}
                     type={"text"}
                   />
                 </div>
@@ -148,7 +189,7 @@ ${shortDescription}
                     <AddInput
                     placeholder="vaše jméno"
                     value={author}
-                    onChange={(e) => setAuthor(e.target.value)}
+                    onChange={handleAuthorChange}
                     type={"text"}
                     />
                   </div>
@@ -158,7 +199,7 @@ ${shortDescription}
                     <AddInput
                     placeholder="Aktuální verze"
                     value={version1}
-                    onChange={(e) => setVersion1(e.target.value)}
+                    onChange={handleVersion1Change}
                     type={"number"}
                     />
                   </div>
@@ -170,7 +211,7 @@ ${shortDescription}
                     <AddInput
                     placeholder="Datum"
                     value={date}
-                    onChange={(e) => setDate(e.target.value)}
+                    onChange={handleDateChange}
                     type={"date"}
                     />
                   </div>
@@ -180,7 +221,7 @@ ${shortDescription}
                     <AddInput
                     placeholder="Typ licence"
                     value={license}
-                    onChange={(e) => setLicense (e.target.value)}
+                    onChange={handleLicenseChange}
                     type={"text"} // checkbox pro výběr licence
                     />
                   </div>
@@ -192,7 +233,7 @@ ${shortDescription}
                   <AddInput
                   placeholder="Váš e-mail"
                   value={contact}
-                  onChange={(e) => setContact(e.target.value)}
+                  onChange={handleContactChange}
                   type={"email"}
                   required
                   />
@@ -206,7 +247,7 @@ ${shortDescription}
                   placeholder="Krátký popisek"
                   rows={3}
                   value={shortDescription}
-                  onChange={(e) => setShortDescription(e.target.value)}
+                  onChange={handleShortDescriptionChange}
                   >
 
                   </textarea>
@@ -217,7 +258,7 @@ ${shortDescription}
 
               {/* Tlačítko*/}
               <div className='w-[650px] flex justify-end pt-2'>
-                <button className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
+                <button onClick={() => window.location.reload()} className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
                   Resetovat
                 </button>
                 <button className='border-2 border-buttonColor text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
@@ -253,14 +294,17 @@ ${shortDescription}
                     
             <div className='h-1/2 flex justify-center items-start'>
               <div className='bg-buttonColor rounded-lg h-[400px] w-full overflow-auto px-6'>
-                <pre>
-                  <code ref={generatedReadmeRef}>
+              {generatedReadme && (
+                <div className="markdown-content p-4">
+                  <ReactMarkdown remarkPlugins={[gfm]}>
                     {generatedReadme}
-                    <div style={centerAlignCSS}>
-                      <p> &lt;p align="center"&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/p&gt;</p>
-                    </div>
-                  </code>
-                </pre>
+                  </ReactMarkdown>
+                  {/* Center-align the last line */}
+                  <div style={centerAlignCSS}>
+                    <p> název souboru: Readme.md |  datum vytvoření: {date}</p>
+                  </div>
+                </div>
+              )}
               </div>
             </div>
             
