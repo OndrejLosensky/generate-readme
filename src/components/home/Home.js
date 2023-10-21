@@ -14,6 +14,7 @@ const Home = (props) => {
             <p> Vítejte v generátoru README.MD </p>
             <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
             <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
+            <p> můžete také přepínat styl vytvoření a vytvořit si tak přehledé README pro váš profil </p>
             <div className='pt-4'>
               <button onClick={props.openDocumentation} className='px-6 py-3 border-buttonColor border-2 rounded-lg hover:-translate-y-1 duration-300'>
                 Dokumentace
