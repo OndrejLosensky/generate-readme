@@ -1,18 +1,18 @@
 
-# **PRvní projekty** #
+# **test** #
 ###  Krátký popisek: ###
-toto je moje první vygenerované README 
+toto je další generování mého readme.md pro profil 
 ###  **Autor:** ###
-  losensky
+  bosensky
       
 ### **Verze:** ###
-  
+  1
       
 ###  **Licence:** ###
-  none
+  MIT License
       
 ### **Kontakt:** ###
   losenskyondrej@gmail.com
 
 
-     <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-19 </p>
+     <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-21 </p>
