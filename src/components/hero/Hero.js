@@ -1,11 +1,12 @@
 import React from "react";
+import Header from "../header/Header";
 
 const Hero = () => {
     return(
         <div className='h-screen flex flex-col justify-between'>
         <div>
-          <h1 className='uppercase text-5xl font-bold text-center text-whiteText py-6'>Readme generator</h1>
-          <div className='text-whiteText text-xl text-center justify-center font-light pt-48'>
+            <Header/>
+          <div className='text-whiteText text-xl text-center justify-center font-light pt-60'>
             <p> Vítejte v generátoru README.MD </p>
             <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
             <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>

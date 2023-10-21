@@ -7,7 +7,7 @@ function App() {
   return (
     <section className='bg-darkBg w-full h-full'>
         <Hero/>
-        {/*<CreateReadme/>*/}
+        <CreateReadme/>
         <Footer/>
     </section>
   );
