@@ -60,8 +60,6 @@ function CreateReadme() {
 
 
   ### **Kontakt:** ###
-
-  <p align="center"> název souboru: Readme.md |  datum vytvoření: {date} </p>
     `;
 
   const [generatedReadme, setGeneratedReadme] = useState(defaultReadmeContent);
@@ -114,17 +112,11 @@ function CreateReadme() {
 # **${newTitle}** #
 
 ${newShortDescription} 
-###  **Autor:** ### 
-  ${newAuthor}
-      
-### **Verze:** ###
-  ${newVersion}
-      
-###  **Licence:** ###
-  ${newLicence}
-      
-### **Kontakt:** ###
-  ${newContact}
+
+###  **Autor:** ${newAuthor}### 
+### **Verze:**  ${newVersion}###
+###  **Licence:** ${newLicence} ### 
+### **Kontakt:**  ${newContact}###
 
 ##### <p align="center"> název souboru: Readme.md |  datum vytvoření: ${newDate} </p> #####
 
@@ -319,9 +311,7 @@ ${newShortDescription}
               <pre>
                   <code ref={generatedReadmeRef}>
                     {generatedReadme}
-                    <div style={centerAlignCSS}>
-                      <p> &lt;p align="center"&gt; název souboru: Readme.md |  datum vytvoření: {date} &lt;/p&gt;</p>
-                    </div>
+                    
                   </code>
                 </pre>
               </div>
