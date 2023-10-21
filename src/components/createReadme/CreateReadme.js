@@ -3,6 +3,7 @@ import Title from "../../layouts/Title"
 import AddInput from '../input/AddInput';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
+import 'font-awesome/css/font-awesome.min.css';
 
 
 
@@ -292,12 +293,22 @@ ${newShortDescription}
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
               <div className='flex items-center justify-end'>
               <button
-                className={`px-8 py-3 text-whiteText rounded-xl ${
+                className={`px-6 py-3 text-whiteText rounded-xl ${
                   copied ? 'bg-copiedColor' : 'bg-buttonColor'
                 }`}
                 onClick={copyToClipboard}
               >
-                {copied ? 'Zkopírováno' : 'Kopírovat'} {/* mění text při aktivním zkopírování | automaticky se změní zpět*/}
+                {copied ? (
+                  <>
+                    <i className="fa fa-check" /> {/* Font Awesome checkmark icon */}
+                    Zkopírováno
+                  </>
+                ) : (
+                  <>
+                    <i className="fa fa-copy" /> {/* Font Awesome copy icon */}
+                    Kopírovat
+                  </>
+                )}
               </button>
               </div>
             </div>
