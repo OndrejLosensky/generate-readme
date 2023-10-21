@@ -160,8 +160,8 @@ ${newShortDescription}
               <p className='font-semibold text-whiteText text-left uppercase text-4xl '> 
                 náhled
               </p>
-              <div className='text-left text-whiteText  justify-center mt-4 h-[70%] border-2 border-whiteText
-              rounded-md shadow-lg bg-buttonColor'>
+              <div className='text-left text-whiteText  justify-center mt-4 h-[70%]
+              rounded-md shadow-md shadow-whiteText bg-outputColor'>
                 {generatedReadme && (
                   <div className="markdown-content p-4">
                     <ReactMarkdown remarkPlugins={[gfm]}>
@@ -292,7 +292,7 @@ ${newShortDescription}
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
               <div className='flex items-center justify-end'>
               <button
-                className={`px-6 py-3 text-whiteText rounded-lg ${
+                className={`px-8 py-3 text-whiteText rounded-xl ${
                   copied ? 'bg-copiedColor' : 'bg-buttonColor'
                 }`}
                 onClick={copyToClipboard}
@@ -303,7 +303,7 @@ ${newShortDescription}
             </div>
                     
             <div className='h-1/2 flex justify-center items-start'>
-              <div className='bg-buttonColor rounded-lg h-[400px] w-full overflow-auto px-6'>
+              <div className='bg-outputColor rounded-lg h-[400px] w-full overflow-auto px-6 text-whiteText'>
               <pre>
                   <code ref={generatedReadmeRef}>
                     {generatedReadme}

@@ -11,11 +11,11 @@ const Hero = () => {
           <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
           <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
           <div className='pt-4'>
-            <button className='px-6 py-3 border-buttonColor border-2 rounded-lg hover:-translate-y-1 duration-300'>
+            <button className='px-6 py-3 border-buttonColor border-2 rounded-xl hover:-translate-y-1 duration-300'>
               Dokumentace
             </button>
             <button
-              className='px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-lg ml-4 hover:-translate-y-1 duration-300'
+              className='px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-xl ml-4 hover:-translate-y-1 duration-300'
               onClick={() => {
                 document.documentElement.classList.add('scroll-animation');
                 const headingElement = document.getElementById('firstBorder');

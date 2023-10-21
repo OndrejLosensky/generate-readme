@@ -12,7 +12,8 @@ module.exports = {
     cardBg: "#202336",
     buttonColor: "#3A85F6",
     buttonHover: "#3268B9",
-    copiedColor: "#47ED6D",
+    copiedColor: "#66BD5F",
+    outputColor: "#574D60",
   }
   },
   plugins: [],
