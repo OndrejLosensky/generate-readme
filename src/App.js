@@ -11,14 +11,16 @@ function App() {
   };
 
   return (
-    <section>
-      <div className={`${open ? "w-0": "w-[100%]"} duration-500`} >
+    <section className=''>
+      <div className={`transition-all ${open ? 'w-0' : 'w-full'} duration-500`} >
         <Home openDocumentation={toggleDocumentation} />
       </div>
-      <div className={`${open ? "w-[0%]": "w-[100%]"} duration-500 bg-whiteText`}>
-        <button className={`${open ? "scale-100": "scale-0"} absolute left-0 top-0 pl-8 pt-8`} onClick={()=>setOpen(!open)}> Zavřít </button>
-        <Documentation/>
-      </div>
+      {open && (
+        <div className={`transition-all w-full duration-500 bg-whiteText`} style={{ transform: open ? 'scale(1)' : 'scale(0)' }}>
+          <button className='absolute left-0 top-0 pl-8 pt-8' onClick={toggleDocumentation}> Zavřít </button>
+          <Documentation />
+        </div>
+      )}
     </section>
   )
 }
