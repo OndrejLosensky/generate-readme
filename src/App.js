@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Home from './components/home/Home';
 import Documentation from './components/documentation/Documentation';
+import "./index.css"
 
 function App() {
   const [showDocumentation, setShowDocumentation] = useState(false);
@@ -30,8 +31,8 @@ function App() {
   return (
     <section style={{ display: 'flex', overflow: 'hidden' }}>
       {showDocumentation && (
-        <div style={documentationStyles}>
-          <button className='absolute left-0 top-0 pl-8 pt-8' onClick={toggleDocumentation}> Zavřít </button>
+        <div className='pl-4 pt-4' style={documentationStyles}>
+          <button className='px-4 py-2 border-2 border-darkBg rounded-xl' onClick={toggleDocumentation}> Zavřít </button>
           <Documentation />
         </div>
       )}

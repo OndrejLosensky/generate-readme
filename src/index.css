@@ -4,5 +4,10 @@
 
 
 .scroll-animation {
-    transition: scroll-behavior 5s; /* Doba trvání scrollování */
+    transition: scroll-behavior 2s; /* Doba trvání scrollování */
+  }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+    text-decoration: dotted;
+    font-size: 80px;
   }
