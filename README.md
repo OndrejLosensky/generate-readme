@@ -15,4 +15,4 @@ toto je další generování mého readme.md pro profil
   losenskyondrej@gmail.com
 
 
-    <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-21 </p>
+  <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-21 </p>
