@@ -61,6 +61,7 @@ function CreateReadme() {
 
   ### **Kontakt:** ###
 
+  <p align="center"> název souboru: Readme.md |  datum vytvoření: {date} </p>
     `;
 
   const [generatedReadme, setGeneratedReadme] = useState(defaultReadmeContent);
@@ -68,46 +69,47 @@ function CreateReadme() {
   const handleTitleChange = (e) => {
     const newTitle = e.target.value;
     setTitle(newTitle);
-    generateReadme(newTitle, shortDescription, author, version1, license, contact);
+    generateReadme(newTitle, shortDescription, author, version1,date, license, contact);
   };
 
   const handleShortDescriptionChange = (e) => {
     const newShortDescription = e.target.value
     setShortDescription(newShortDescription);
-    generateReadme(title, newShortDescription, author, version1, license, contact); 
+    generateReadme(title, newShortDescription, author, version1,date, license, contact); 
   };
 
   const handleAuthorChange = (e) => {
     const newAuthor = e.target.value
     setAuthor(newAuthor);
-    generateReadme(title, shortDescription, newAuthor, version1, license, contact); 
+    generateReadme(title, shortDescription, newAuthor, version1,date, license, contact); 
   };
 
   const handleVersion1Change = (e) => {
     const newVersion = e.target.value
     setVersion1(newVersion);
-    generateReadme(title, shortDescription, author, newVersion, license, contact); 
+    generateReadme(title, shortDescription, author, newVersion, date, license, contact); 
   };
 
   const handleDateChange = (e) => {
-    setDate(e.target.value);
-    generateReadme(); 
+    const newDate = e.target.value
+    setDate(newDate);
+    generateReadme(title,shortDescription, author, version1, newDate, license, contact); 
   };
 
   const handleLicenseChange = (e) => {
     const newLicence = e.target.value
     setLicense(newLicence);
-    generateReadme(title, shortDescription, author, version1, newLicence, contact); 
+    generateReadme(title, shortDescription, author, version1,date, newLicence, contact); 
   };
 
   const handleContactChange = (e) => {
     const newContact = e.target.value
     setContact(newContact);
-    generateReadme(title, shortDescription, author, version1, license, newContact); 
+    generateReadme(title, shortDescription, author, version1,date ,license, newContact); 
   };
 
 
-  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion, newLicence, newContact) => {
+  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion,newDate, newLicence, newContact) => {
     const readmeContent = `
 # **${newTitle}** #
 
@@ -124,6 +126,7 @@ ${newShortDescription}
 ### **Kontakt:** ###
   ${newContact}
 
+##### <p align="center"> název souboru: Readme.md |  datum vytvoření: ${newDate} </p> #####
 
     `;
   
@@ -139,8 +142,6 @@ ${newShortDescription}
     <div>
       
       {/* Sekce s popiskem | full page */}
-     
-
       <div className='pt-8 flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
           {/* Levá část*/}
           <div className='w-[40%] h-[80%]flex flex-col pl-12'>
@@ -170,7 +171,7 @@ ${newShortDescription}
                     </ReactMarkdown>
                     {/* Center-align the last line */}
                     <div style={centerAlignCSS}>
-                      <p>název souboru: Readme.md |  datum vytvoření: {date}</p>
+                      {/*<p>název souboru: Readme.md |  datum vytvoření: {date}</p>*/}
                     </div>
                   </div>
                 )}
