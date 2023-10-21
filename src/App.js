@@ -7,6 +7,7 @@ function App() {
 
   const toggleDocumentation = () => {
     setOpen(!open);
+    
   };
 
   return (
