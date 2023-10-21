@@ -110,9 +110,9 @@ function CreateReadme() {
   const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion, newLicence, newContact) => {
     const readmeContent = `
 # **${newTitle}** #
-###  Krátký popisek: ###
+
 ${newShortDescription} 
-###  **Autor:** ###
+###  **Autor:** ### 
   ${newAuthor}
       
 ### **Verze:** ###
@@ -170,7 +170,7 @@ ${newShortDescription}
                     </ReactMarkdown>
                     {/* Center-align the last line */}
                     <div style={centerAlignCSS}>
-                      <p> název souboru: Readme.md |  datum vytvoření: {date}</p>
+                      <p>název souboru: Readme.md |  datum vytvoření: {date}</p>
                     </div>
                   </div>
                 )}
