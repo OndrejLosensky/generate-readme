@@ -6,12 +6,12 @@ module.exports = {
   theme: {
   extend: {},
   colors: {
-    darkBg: "#1c263f",
+    darkBg: "#332F39",
     whiteText: "#ffffff",
     darkText:"#111111",
     cardBg: "#202336",
-    buttonColor: "#0466c8",
-    buttonHover: "#023e7d",
+    buttonColor: "#3A85F6",
+    buttonHover: "#3268B9",
     copiedColor: "#47ED6D",
   }
   },

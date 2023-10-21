@@ -271,7 +271,7 @@ ${newShortDescription}
                 <button onClick={() => window.location.reload()} className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
                   Resetovat
                 </button>
-                <button className='border-2 border-buttonColor text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:bg-buttonHover duration-300'
+                <button className='border-2 border-buttonColor text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:border-buttonHover hover:bg-buttonHover duration-300'
                  type="button" onClick={generateReadme}>
                   Vygeneruj README
                 </button>
