@@ -187,7 +187,7 @@ ${newShortDescription}
       <div>
         {/* Náhled + tips for creating README*/}
         <div className='w-[100%] h-[100%] flex flex-row justify-center items-center pt-8 pb-24'>
-              <div className='bg-copiedColor' data-aos="fade-right">
+              <div className='bg-copiedColor'>
                 <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
                   Tips for editing README:
                 </h2>

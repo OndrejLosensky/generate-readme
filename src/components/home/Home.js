@@ -4,8 +4,16 @@ import Footer from "../footer/Footer"
 import Header from "../header/Header";
 import ScrollProgressBar from "../scrollProgressBar/ScrollProgressBar";
 import "../../index.css"
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from 'react';
+
 
 const Home = (props) => {
+    useEffect(() => {
+      AOS.init({duration: "1500" });
+    },[])
+
     return(
     <section className='bg-darkBg w-full h-full'>
         <div className='h-screen flex flex-col justify-between'>
@@ -13,12 +21,14 @@ const Home = (props) => {
           <Header/>
           <ScrollProgressBar />
           <div className='text-whiteText text-xl text-center justify-center font-light pt-60 font-roboto'>
-            <p> Vítejte v generátoru README.MD </p>
-            <p> jednoduchým způsobem vytvořte minimalistické readme pro vaše projekty </p>
-            <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
-            <p> můžete také přepínat styl vytvoření a vytvořit si tak přehledé README pro váš profil </p>
-            <p> šablona je velmi lehce upravitelná dle vašich potřeb</p>
-            <div className='pt-4'>
+            <div data-aos="fade-right">
+              <p > Vítejte v generátoru README.MD </p>
+              <p> jednoduchým způsobem vytvořte minimalistické readme pro vaše projekty </p>
+              <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
+              <p> můžete také přepínat styl vytvoření a vytvořit si tak přehledé README pro váš profil </p>
+              <p> šablona je velmi lehce upravitelná dle vašich potřeb</p>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="200" className='pt-4'>
               <button onClick={props.openDocumentation} className='px-6 py-3 border-buttonColor border-2 rounded-lg hover:-translate-y-1 duration-300'>
                 Dokumentace
               </button>

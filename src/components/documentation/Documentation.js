@@ -21,7 +21,7 @@ const Documentation = () => {
                     zde najdete jak tuto aplikaci používat a <br/> 
                     jak kopírovat do vašeho readme souboru
                 </p>
-                <h3 className="pt-3 text-center text-3xl font-semibold"> Vložení dat do readme.md </h3>
+                <h3 className="pt-3 text-center text-3xl font-semibold"> Kroky jak postupovat </h3>
                 <p data-aos="fade-right"> <span className="text-left text-6xl font-black font-dancingScript pt-1"> 1 </span> vytvořte readme.md soubor ve vašem repository</p>
                 <p data-aos="fade-right" data-aos-delay="500"> <span className="text-right text-6xl font-black font-dancingScript pt-1"> 2 </span> vyplňte formulář v této aplikaci dle vašich potřeb</p>
                 <p data-aos="fade-right" data-aos-delay="1000"> <span className="text-left text-6xl font-black font-dancingScript pt-1"> 3 </span> klikněte na tlačítko kopírovat, které se nachází na spodní části</p>
