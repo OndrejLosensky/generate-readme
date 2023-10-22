@@ -158,54 +158,59 @@ ${newShortDescription}
   };
 
   return (
-    <div>
-      
-      {/* Sekce s popiskem | full page */}
-      <div className='pt-8 flex flex-row justify-start h-screen'> {/* ml-24 | smazat justify center pro posunutí doleva*/}
-          {/* Levá část*/}
-          <div className='w-[40%] h-[80%]flex flex-col pl-12'>
-            <div className='h-[28%]'>
-              <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
-                Tips for editing README:
-              </h2>
-              <p className='text-whiteText text-sm text-left pt-4'>
-                Pro <span className='font-bold'> zvýraznění textu</span> obklopte slovo dvěmi * např(**Nadpis**) <br/>
-                Pro vytvoření<span className='italic'> kurzívy</span> obklopte slovo jednou * např(*Jméno*) <br/>
-                Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
-                Pro vytvoření <span className='text-buttonColor underline'> odkazu</span> vložte text-link do hranatých závorek a odkaz do kulatých <br/>
-                např. ([Klikni](https://link.com)) <br/>
-                # funguje jako heading tag --  # = h1 | ###### = h6 <br/>
-                pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
-              </p>
-            </div>
-            <div className='h-2/3'>
-              <p className='pt-4 font-semibold text-whiteText text-left uppercase text-4xl '> 
-                náhled
-              </p>
-              <div className='text-left text-whiteText  justify-center mt-4 h-[70%]
-              rounded-md shadow-md shadow-whiteText bg-outputColor'>
-                {generatedReadme && (
-                  <div className="markdown-content p-4">
-                    <ReactMarkdown remarkPlugins={[gfm]}>
-                      {generatedReadme}
-                    </ReactMarkdown>
-                    {/* Center-align the last line */}
-                    <div style={centerAlignCSS}>
-                      {/*<p>název souboru: Readme.md |  datum vytvoření: {date}</p>*/}
-                    </div>
-                  </div>
-                )}
+    <div> 
+      <div>
+        {/* Náhled + tips for creating README*/}
+        <div className='w-[100%] h-[100%] flex flex-row justify-center items-center pt-8 pb-24'>
+              <div>
+                <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
+                  Tips for editing README:
+                </h2>
+                <p className='text-whiteText text-sm text-left pt-4'>
+                  Pro <span className='font-bold'> zvýraznění textu</span> obklopte slovo dvěmi * např(**Nadpis**) <br/>
+                  Pro vytvoření<span className='italic'> kurzívy</span> obklopte slovo jednou * např(*Jméno*) <br/>
+                  Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
+                  Pro vytvoření <span className='text-buttonColor underline'> odkazu</span> vložte text-link do hranatých závorek a odkaz do kulatých <br/>
+                  např. ([Klikni](https://link.com)) <br/>
+                  # funguje jako heading tag --  # = h1 | ###### = h6 <br/>
+                  pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
+                </p>
               </div>
-            </div>
-          </div>
 
+              <div className='w-1/2 pl-12'>
+                <p className='pt-4 font-semibold text-whiteText text-left uppercase text-4xl '> 
+                  náhled
+                </p>
+                <div className='text-left text-whiteText  justify-center mt-4 h-[70%]
+                rounded-md shadow-md shadow-whiteText bg-outputColor'>
+                  {generatedReadme && (
+                    <div className="markdown-content p-4">
+                      <ReactMarkdown remarkPlugins={[gfm]}>
+                        {generatedReadme}
+                      </ReactMarkdown>
+                      {/* Center-align the last line */}
+                      <div style={centerAlignCSS}>
+                        {/*<p>název souboru: Readme.md |  datum vytvoření: {date}</p>*/}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+        </div>
+
+      </div>
+    
+      <div className='pt-8 flex flex-row justify-center h-screen'>
+          {/* Levá část*/}
+        
           {/* Pravá část*/}
-          <div className='w-[60%] h-[80%] rounded-2xl'>
+          <div className='w-[75%] h-[80%] rounded-2xl'>
+            <h2 id='firstHeading' className='text-3xl text-center uppercase text-whiteText pb-2 pt-8'> Vyplň formulář</h2>
             <form className='flex flex-col items-center py-4' onSubmit={handleSubmit}>
               <div className='py-0'>
                 
                 <Title text="Název projektu:"/>
-                <div className='w-[650px] rounded-md'>
+                <div className='w-[850px] rounded-md'>
                   <AddInput
                     placeholder="Zde zadejte název"
                     value={title}
@@ -230,7 +235,7 @@ ${newShortDescription}
 
                 {/* TŘETÍ ŘÁDEK */}
                 <div className='flex flex-row'>
-                  <div className='w-[46%]'>
+                  <div className='w-[48%]'>
                     <Title text="Autor"/>
                     <AddInput
                     placeholder="vaše jméno"
@@ -239,15 +244,15 @@ ${newShortDescription}
                     type={"text"}
                     />
                   </div>
-                  <div className='w-[8%]'></div>
-                  <div className='w-[46%]'>
+                  <div className='w-[4%]'></div>
+                  <div className='w-[48%]'>
                     <Title text="Verze"/>
                     <select
                       value={selectedItem}
                       placeholder='vyberte aktuální verzi'
                       onChange={handleVersion1Change}
                       className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
-                      style={{ width: '300px', height: '45px' }}
+                      style={{ width: '405px', height: '45px' }}
                     >
                       <option value="1">1</option>
                       <option value={selectedItem}> + přidat novou verzi</option>
@@ -256,7 +261,7 @@ ${newShortDescription}
                 </div>
                 {/* ČTVRTÝ ŘÁDEK */}
                 <div className=' flex flex-row'>
-                  <div className='w-[46%]'>
+                  <div className='w-[48%]'>
                     <Title text="Datum"/>
                     <AddInput
                     placeholder="Datum"
@@ -265,14 +270,14 @@ ${newShortDescription}
                     type={"date"}
                     />
                   </div>
-                  <div className='w-[8%]'></div>
-                  <div className='w-[46%]'>
+                  <div className='w-[4%]'></div>
+                  <div className='w-[48%]'>
                     <Title text="Licence"/>
                     <select
                       value={license}
                       onChange={handleLicenseChange}
                       className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
-                      style={{ width: '300px', height: '45px' }}
+                      style={{ width: '405px', height: '45px' }}
                     >
                       <option value="Žádná">Žádná </option>
                       <option value="Open Software License 3.0">Open Software License 3.0</option>
@@ -313,7 +318,7 @@ ${newShortDescription}
               </div>
 
               {/* Tlačítko*/}
-              <div className='w-[650px] flex justify-end pt-2'>
+              <div className='w-[850px] flex justify-end pt-2'>
                 <button onClick={() => window.location.reload()} className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
                   Resetovat
                 </button>
@@ -344,7 +349,7 @@ ${newShortDescription}
         
         </div>
         {/* Sekce pro zobrazení výstupu*/}
-        <div className='w-full h-[80%] mb-12 flex justify-center items-center'>
+        <div className='w-full pt-24 h-[90%] mb-12 flex justify-center items-center'>
           <div className='w-2/3'>
             <div className='flex flex-row justify-between'>
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
@@ -370,7 +375,7 @@ ${newShortDescription}
               </div>
             </div>
                     
-            <div className='h-1/2 flex justify-center items-start'>
+            <div className='h-[500px] flex justify-center items-start'>
               <div id='output' className='bg-outputColor rounded-lg h-[400px] w-full overflow-auto px-6 text-whiteText'>
               <pre>
                   <code ref={generatedReadmeRef}>

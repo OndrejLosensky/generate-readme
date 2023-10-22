@@ -25,7 +25,7 @@ const Home = (props) => {
               <button className='px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-lg ml-4 hover:-translate-y-1 duration-300'
               onClick={() => {
                 document.documentElement.classList.add('scroll-animation');
-                const headingElement = document.getElementById('firstBorder');
+                const headingElement = document.getElementById('firstHeading');
                 if (headingElement) {
                   headingElement.scrollIntoView({
                     behavior: 'smooth',
