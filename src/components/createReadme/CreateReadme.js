@@ -148,7 +148,7 @@ ${newShortDescription}
                 Pro vytvoření <span className='text-buttonColor underline'> odkazu</span> vložte text-link do hranatých závorek a odkaz do kulatých <br/>
                 např. ([Klikni](https://link.com)) <br/>
                 # funguje jako heading tag --  # = h1 | ###### = h6
-                vytvo
+                pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
               </p>
             </div>
             <div className='h-2/3'>
