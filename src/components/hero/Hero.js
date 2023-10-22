@@ -7,7 +7,7 @@ const Hero = () => {
       <div>
         <Header />
         <div className='text-whiteText text-xl text-center justify-center font-light pt-60 animate-fade-in'>
-          <p> Vítejte v generátoru README.MD </p>
+          <p className="font-dancingScript"> Vítejte v generátoru README.MD </p>
           <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
           <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
           <div className='pt-4'>

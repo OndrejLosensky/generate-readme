@@ -10,7 +10,8 @@ module.exports = {
   theme: {
   extend: {
     fontFamily: {
-      dancingScript: ['"Dancing Script"', ...defaultTheme.fontFamily.sans]
+      dancingScript: ['"Dancing Script"', ...defaultTheme.fontFamily.sans],
+      roboto:['"Roboto"', ...defaultTheme.fontFamily.sans]
     }
   },
   colors: {

@@ -10,7 +10,7 @@ const Home = (props) => {
         <div className='h-screen flex flex-col justify-between'>
         <div>
             <Header/>
-          <div className='text-whiteText text-xl text-center justify-center font-light pt-60'>
+          <div className='text-whiteText text-xl text-center justify-center font-light pt-60 font-roboto'>
             <p> Vítejte v generátoru README.MD </p>
             <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
             <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
