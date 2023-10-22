@@ -15,6 +15,8 @@ jednoduchý způsob jak generovat readme pro každý projekt či profilové read
 <p align="left"> zatím není </p>
 <h3 align="left">Jak mě kontaktovat? </h3>
 <p align="left"> losenskyondrej@gmail.com </p>
+
+
 <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-22 </p>
 
     

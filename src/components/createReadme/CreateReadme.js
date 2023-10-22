@@ -159,6 +159,8 @@ ${newShortDescription}
 <p align="left"> ${newLive} </p>
 <h3 align="left">Jak mě kontaktovat? </h3>
 <p align="left"> ${newContact} </p>
+
+
 <p align="center"> název souboru: Readme.md |  datum vytvoření: ${newDate} </p>
 
     `;
