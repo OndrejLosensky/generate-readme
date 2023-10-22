@@ -3,6 +3,7 @@ import Title from "../../layouts/Title"
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import 'font-awesome/css/font-awesome.min.css';
+import SmallTitle from '../../layouts/SmallTitle';
 
 
 
@@ -14,7 +15,8 @@ function CreateReadme() {
   const [date, setDate] = useState('');
   const [license, setLicense] = useState('');
   const [contact, setContact] = useState('');
-  const [live, setLive] = useState('')
+  const [live, setLive] = useState('');
+  const [language, setLanguage] = useState('');
 
   const generatedReadmeRef = useRef(null);
   // proměnná pro určení stavu kopírování
@@ -67,19 +69,19 @@ function CreateReadme() {
   const handleTitleChange = (e) => {
     const newTitle = e.target.value;
     setTitle(newTitle);
-    generateReadme(newTitle, shortDescription, author, version1,date, license, contact, live);
+    generateReadme(newTitle, shortDescription, author, version1,date, license, contact, live, language);
   };
 
   const handleShortDescriptionChange = (e) => {
     const newShortDescription = e.target.value
     setShortDescription(newShortDescription);
-    generateReadme(title, newShortDescription, author, version1,date, license, contact, live); 
+    generateReadme(title, newShortDescription, author, version1,date, license, contact, live ,language); 
   };
 
   const handleAuthorChange = (e) => {
     const newAuthor = e.target.value
     setAuthor(newAuthor);
-    generateReadme(title, shortDescription, newAuthor, version1,date, license, contact, live); 
+    generateReadme(title, shortDescription, newAuthor, version1,date, license, contact, live, language); 
   };
 
   const [selectedItem, setSelectedItem] = useState('1'); 
@@ -103,40 +105,49 @@ function CreateReadme() {
     }
 
     setVersion1(updatedVersion);
-    generateReadme(title, shortDescription, author, updatedVersion, date, license, contact, live);
+    generateReadme(title, shortDescription, author, updatedVersion, date, license, contact, live, language);
   };
   
 
   const handleDateChange = (e) => {
     const newDate = e.target.value
     setDate(newDate);
-    generateReadme(title,shortDescription, author, version1, newDate, license, contact, live); 
+    generateReadme(title,shortDescription, author, version1, newDate, license, contact, live, language); 
   };
 
   const handleLicenseChange = (e) => {
     const newLicence = e.target.value
     setLicense(newLicence);
-    generateReadme(title, shortDescription, author, version1,date, newLicence, contact,live); 
+    generateReadme(title, shortDescription, author, version1,date, newLicence, contact,live, language); 
   };
 
   const handleContactChange = (e) => {
     const newContact = e.target.value
     setContact(newContact);
-    generateReadme(title, shortDescription, author, version1,date ,license, newContact, live); 
+    generateReadme(title, shortDescription, author, version1,date ,license, newContact, live, language); 
   };
 
   const handleLive = (e) => {
     const newLive = e.target.value
     setLive(newLive);
-    generateReadme(title, shortDescription,author,version1,date,license,contact, newLive)
-  }
+    generateReadme(title, shortDescription,author,version1,date,license,contact, newLive, language)
+  };
+
+  const handleLanguageChange = (e) => {
+    const updatedLanguage = e.target.value;
+    setLanguage(updatedLanguage);
+    generateReadme(title, shortDescription,author,version1, date,license,contact,live, updatedLanguage);
+
+  };
 
 
-  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion,newDate, newLicence, newContact, newLive) => {
+  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion,newDate, newLicence, newContact, newLive, newLanguage) => {
     const readmeContent = `
 # **${newTitle}** #
 
 ${newShortDescription} 
+
+### použité jazyky: ${newLanguage} ###
 
 ### **Autor:** ${newAuthor}### 
 ### **Verze:** ${newVersion}###
@@ -264,7 +275,7 @@ ${newShortDescription}
                     </label>
                   </div>
                 </div>
-                <div className='flex flex-row pt-6'>
+                  <div className='flex flex-row pt-6'>
                   <div className='w-[48%]'>
                     <label className='relative cursor-pointer w-[850px]'>
                       <input
@@ -286,8 +297,9 @@ ${newShortDescription}
                 <Title text="další data"/>
                 {/* druhá sekce*/}
                 <div className='flex flex-row pt-6'>
-                  <div>
-                  <select
+                  <div className='w-[48%]'>
+                    <SmallTitle text="verze projektu"/>
+                    <select
                       value={selectedItem}
                       placeholder='vyberte aktuální verzi'
                       onChange={handleVersion1Change}
@@ -298,6 +310,22 @@ ${newShortDescription}
                       <option value='custom'> + přidat verzi</option>
                     </select>
                   </div>
+                  <div className='w-[4%]'></div>
+                  <div className='w-[48%]'>
+                    <SmallTitle text="Použitý jazyk"/>
+                    <select
+                        value="Vyber jazyk"
+                        placeholder='vyberte jazyk'
+                        onChange={handleLanguageChange}
+                        className="px-2 text-whiteText bg-darkBg border-2 border-bg-white rounded-md py-2 w-full"
+                        style={{ width: '405px', height: '64px' }}
+                      >
+                        <option value='javascript'> JavaScript </option>
+                        <option value='python'>Python</option>
+                        <option value='c#'>C#</option>
+                        <option value='swiftUI'>swiftUI</option>
+                      </select>
+                  </div>
                 </div>
 
                 
@@ -305,6 +333,7 @@ ${newShortDescription}
                 <div className=' flex flex-row pt-6'>
                   <div className='w-[48%]'>
                   <label className='relative cursor-pointer w-[850px]'>
+                    <SmallTitle text="Datum vytvoření"/>
                     <input
                       type='date'
                       onChange={handleDateChange}
@@ -315,6 +344,7 @@ ${newShortDescription}
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
+                    <SmallTitle text="Vyberte licenci"/>
                     <select
                       value={license}
                       onChange={handleLicenseChange}

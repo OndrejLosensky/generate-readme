@@ -25,14 +25,15 @@ function App() {
     flex: 1,
     display: 'flex',
     transform: `translateX(${showDocumentation ? '-100%' : 0})`,
-    transition: 'transform 0.5s ease',
+    transition: 'transform 0.7s ease',
   };
 
   return (
     <section style={{ display: 'flex', overflow: 'hidden' }}>
       {showDocumentation && (
-        <div className='pl-4 pt-4' style={documentationStyles}>
+        <div className='pl-4 pt-4 ' style={documentationStyles}>
           <button className='px-4 py-2 border-2 border-darkBg rounded-xl' onClick={toggleDocumentation}> Zavřít </button>
+          
           <Documentation />
         </div>
       )}

@@ -2,7 +2,7 @@ import React from "react";
 
 const Documentation = () => {
     return(
-        <div className="flex flex-col items-center">
+        <div className=" flex flex-col items-center">
             <h2 className="text-5xl font-bold pt-2 uppercase "> dokumentace </h2>
             {/* sekce s popiskem */}
             <div className="pt-4">

@@ -23,6 +23,7 @@ module.exports = {
     buttonHover: "#3268B9",
     copiedColor: "#66BD5F",
     outputColor: "#574D60",
+    docsColor: "#EEEEEE",
   }
   },
   plugins: [],

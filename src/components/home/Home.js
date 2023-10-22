@@ -12,9 +12,6 @@ const Home = (props) => {
         <div>
           <Header/>
           <ScrollProgressBar />
-
-       
-
           <div className='text-whiteText text-xl text-center justify-center font-light pt-60 font-roboto'>
             <p> Vítejte v generátoru README.MD </p>
             <p> jednoduchým způsobem vytvořte minimalistické readme pro vaše projekty </p>
