@@ -16,7 +16,8 @@ module.exports = {
   extend: {
     fontFamily: {
       dancingScript: ['"Dancing Script"', ...defaultTheme.fontFamily.sans],
-      roboto:['"Roboto"', ...defaultTheme.fontFamily.sans]
+      roboto:['"Roboto"', ...defaultTheme.fontFamily.sans],
+      cookie:['"Cookie"', ...defaultTheme.fontFamily.sans]
     }
   },
   colors: {
