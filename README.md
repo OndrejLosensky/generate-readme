@@ -1,19 +1,16 @@
 
-# **TEST1** #
+# **README Generator** #
 
-toto je testovací readme soubor 
-###  **Autor:** ### 
-  bosensky
-      
+Toto je druhá verze generátoru readme 
+
+### použité jazyky: python ###
+
+### **Autor:** losensky### 
 ### **Verze:** ###
-  2
-      
-###  **Licence:** ###
-  MIT
-      
-### **Kontakt:** ###
-  losenskyondrej@gmail.com
+### **Licence:** Apache license ### 
+### **Live Demo:** není  ###
+### **Kontakt:**  losenskyondrej@gmail.com###
 
-##### <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-23 </p> #####
+##### <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-12-01 </p> #####
 
-     <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-23 </p>
+    
