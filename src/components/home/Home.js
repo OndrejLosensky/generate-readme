@@ -2,14 +2,18 @@ import React from "react";
 import CreateReadme from "../createReadme/CreateReadme";
 import Footer from "../footer/Footer"
 import Header from "../header/Header";
+import ScrollProgressBar from "../scrollProgressBar/ScrollProgressBar";
 
 
 const Home = (props) => {
     return(
     <section className='bg-darkBg w-full h-full'>
+      <div className="sticky top-0">
+        <ScrollProgressBar />
+      </div>
         <div className='h-screen flex flex-col justify-between'>
         <div>
-            <Header/>
+          <Header/>
           <div className='text-whiteText text-xl text-center justify-center font-light pt-60 font-roboto'>
             <p> Vítejte v generátoru README.MD </p>
             <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
