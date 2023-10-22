@@ -377,7 +377,7 @@ ${newShortDescription}
                 <button className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-xl hover:bg-buttonHover hover:border-buttonHover duration-300'
                 onClick={() => {
                   document.documentElement.classList.add('scroll-animation');
-                  const headingElement = document.getElementById('output');
+                  const headingElement = document.getElementById('outputSect');
                   if (headingElement) {
                     headingElement.scrollIntoView({
                       behavior: 'smooth',
@@ -394,7 +394,7 @@ ${newShortDescription}
               </div>
               
             </form>
-            <div className='text-whiteText text-xl text-center font-light pt-36'>
+            <div id='outputSect' className='text-whiteText text-xl text-center font-light laptop:pt-16 bigScreen:pt-36'>
                     <p> 
                       You can find the output here <br/>
                       Just click copy and then paste it to your README.MD
@@ -404,7 +404,7 @@ ${newShortDescription}
         
         </div>
         {/* Sekce pro zobrazení výstupu*/}
-        <div className='w-full pt-24 h-[90%] mb-12 flex justify-center items-center'>
+        <div className='w-full laptop:pt-8 bigScreen:pt-24 h-[90%] mb-12 flex justify-center items-center'>
           <div className='w-2/3'>
             <div className='flex flex-row justify-between'>
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
@@ -430,8 +430,8 @@ ${newShortDescription}
               </div>
             </div>
                     
-            <div className='h-[500px] flex justify-center items-start'>
-              <div id='output' className='bg-outputColor rounded-lg h-[500px] w-full overflow-auto px-6 text-whiteText'>
+            <div className='bigScreen:h-[500px] laptop:h-[400px] flex justify-center items-start'>
+              <div id='output' className='bg-outputColor rounded-lg laptop:h-[350px] bigScreen:h-[500px] w-full overflow-auto px-6 text-whiteText'>
               <pre>
                   <code ref={generatedReadmeRef}>
                     {generatedReadme}

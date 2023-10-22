@@ -8,6 +8,11 @@ module.exports = {
   "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'tablet': '640px',
+      'laptop': '1280px',
+      'bigScreen': '1920px',
+    },
   extend: {
     fontFamily: {
       dancingScript: ['"Dancing Script"', ...defaultTheme.fontFamily.sans],
