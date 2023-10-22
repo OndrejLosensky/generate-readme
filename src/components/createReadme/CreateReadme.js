@@ -147,15 +147,15 @@ function CreateReadme() {
 
 ${newShortDescription} 
 
-### použité jazyky: ${newLanguage} ###
+#### použité jazyky: ###  ${newLanguage}
 
-### **Autor:** ${newAuthor}### 
-### **Verze:** ${newVersion}###
-### **Licence:** ${newLicence} ### 
-### **Live Demo:** ${newLive}  ###
-### **Kontakt:**  ${newContact}###
+#### **Autor:** ####  ${newAuthor}
+#### **Verze:** ####  ${newVersion}
+#### **Licence:** ####  ${newLicence} 
+#### **Live Demo:** ####  ${newLive} 
+#### **Kontakt:** ####   ${newContact}
 
-##### <p align="center"> název souboru: Readme.md |  datum vytvoření: ${newDate} </p> #####
+<p align="center"> název souboru: Readme.md |  datum vytvoření: ${newDate} </p>
 
     `;
   

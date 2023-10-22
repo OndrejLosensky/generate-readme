@@ -1,16 +1,16 @@
 
-# **README Generator** #
+# **readme-generator** #
 
-Toto je druhá verze generátoru readme 
+touto aplikací je možné generovat velmi jednoduchá readme pro vaše profily a nebo projekty 
 
-### použité jazyky: python ###
+#### použité jazyky: ###  
 
-### **Autor:** losensky### 
-### **Verze:** ###
-### **Licence:** Apache license ### 
-### **Live Demo:** není  ###
-### **Kontakt:**  losenskyondrej@gmail.com###
+#### **Autor:** ####  losensky
+#### **Verze:** ####  1.1.0
+#### **Licence:** ####  Open Software License 3.0 
+#### **Live Demo:** ####  zatím není 
+#### **Kontakt:** ####   losenskyondrej@gmail.com
 
-##### <p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-12-01 </p> #####
+<p align="center"> název souboru: Readme.md |  datum vytvoření: 2023-10-22 </p>
 
     
