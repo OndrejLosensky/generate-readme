@@ -15,6 +15,7 @@ function CreateReadme() {
   const [date, setDate] = useState('');
   const [license, setLicense] = useState('');
   const [contact, setContact] = useState('');
+  const [live, setLive] = useState('')
 
   const generatedReadmeRef = useRef(null);
   // proměnná pro určení stavu kopírování
@@ -67,19 +68,19 @@ function CreateReadme() {
   const handleTitleChange = (e) => {
     const newTitle = e.target.value;
     setTitle(newTitle);
-    generateReadme(newTitle, shortDescription, author, version1,date, license, contact);
+    generateReadme(newTitle, shortDescription, author, version1,date, license, contact, live);
   };
 
   const handleShortDescriptionChange = (e) => {
     const newShortDescription = e.target.value
     setShortDescription(newShortDescription);
-    generateReadme(title, newShortDescription, author, version1,date, license, contact); 
+    generateReadme(title, newShortDescription, author, version1,date, license, contact, live); 
   };
 
   const handleAuthorChange = (e) => {
     const newAuthor = e.target.value
     setAuthor(newAuthor);
-    generateReadme(title, shortDescription, newAuthor, version1,date, license, contact); 
+    generateReadme(title, shortDescription, newAuthor, version1,date, license, contact, live); 
   };
 
   const [selectedItem, setSelectedItem] = useState('1'); 
@@ -103,38 +104,45 @@ function CreateReadme() {
     }
 
     setVersion1(updatedVersion);
-    generateReadme(title, shortDescription, author, updatedVersion, date, license, contact);
+    generateReadme(title, shortDescription, author, updatedVersion, date, license, contact, live);
   };
   
 
   const handleDateChange = (e) => {
     const newDate = e.target.value
     setDate(newDate);
-    generateReadme(title,shortDescription, author, version1, newDate, license, contact); 
+    generateReadme(title,shortDescription, author, version1, newDate, license, contact, live); 
   };
 
   const handleLicenseChange = (e) => {
     const newLicence = e.target.value
     setLicense(newLicence);
-    generateReadme(title, shortDescription, author, version1,date, newLicence, contact); 
+    generateReadme(title, shortDescription, author, version1,date, newLicence, contact,live); 
   };
 
   const handleContactChange = (e) => {
     const newContact = e.target.value
     setContact(newContact);
-    generateReadme(title, shortDescription, author, version1,date ,license, newContact); 
+    generateReadme(title, shortDescription, author, version1,date ,license, newContact, live); 
   };
 
+  const handleLive = (e) => {
+    const newLive = e.target.value
+    setLive(newLive);
+    generateReadme(title, shortDescription,author,version1,date,license,contact, newLive)
+  }
 
-  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion,newDate, newLicence, newContact) => {
+
+  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion,newDate, newLicence, newContact, newLive) => {
     const readmeContent = `
 # **${newTitle}** #
 
 ${newShortDescription} 
 
-###  **Autor:** ${newAuthor}### 
-### **Verze:**  ${newVersion}###
-###  **Licence:** ${newLicence} ### 
+### **Autor:** ${newAuthor}### 
+### **Verze:** ${newVersion}###
+### **Licence:** ${newLicence} ### 
+### **Live Demo:** ${newLive}  ###
 ### **Kontakt:**  ${newContact}###
 
 ##### <p align="center"> název souboru: Readme.md |  datum vytvoření: ${newDate} </p> #####
@@ -206,6 +214,20 @@ ${newShortDescription}
                   />
                 </div>
 
+                 {/* TEXT AREA pro popisek */}
+                 <div>
+                  <Title text="Krátký popisek:"/>
+                  <textarea
+                  className="text-darkText resize-none bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
+                  placeholder="Krátký popisek"
+                  rows={3}
+                  value={shortDescription}
+                  onChange={handleShortDescriptionChange}
+                  >
+
+                  </textarea>
+                </div>
+
                 {/* TŘETÍ ŘÁDEK */}
                 <div className='flex flex-row'>
                   <div className='w-[46%]'>
@@ -262,30 +284,30 @@ ${newShortDescription}
                 </div>
 
                 {/* Pátý řádek*/}
-                <div>
-                  <Title text="Kontakt"/>
-                  <AddInput
-                  placeholder="Váš e-mail"
-                  value={contact}
-                  onChange={handleContactChange}
-                  type={"email"}
-                  required
-                  />
+                <div className='flex flex-row'>
+                  <div className='w-[48%]'> 
+                    <Title text="Kontakt"/>
+                    <AddInput
+                    placeholder="Váš e-mail"
+                    value={contact}
+                    onChange={handleContactChange}
+                    type={"email"}
+                    required
+                    />
+                  </div>
+                  <div className='w-[4%]'></div>
+                  <div className='w-[48%]'> 
+                    <Title text="Live preview"/>
+                    <AddInput
+                    placeholder="odkaz na live demo"
+                    value={live}
+                    onChange={handleLive}
+                    type={"link"}
+                    />
+                  </div>
                 </div>
 
-                {/* TEXT AREA pro popisek */}
-                <div>
-                  <Title text="Krátký popisek:"/>
-                  <textarea
-                  className="text-darkText resize-none bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
-                  placeholder="Krátký popisek"
-                  rows={3}
-                  value={shortDescription}
-                  onChange={handleShortDescriptionChange}
-                  >
-
-                  </textarea>
-                </div>
+               
 
 
               </div>
