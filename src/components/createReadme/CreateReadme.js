@@ -266,9 +266,21 @@ ${newShortDescription}
                 <button onClick={() => window.location.reload()} className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
                   Resetovat
                 </button>
-                <button className='border-2 border-buttonColor text-whiteText px-6 py-3 bg-buttonColor rounded-xl hover:border-buttonHover hover:bg-buttonHover duration-300'
-                 type="button" onClick={generateReadme}>
-                  Vygeneruj README
+                <button className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-xl hover:bg-buttonHover hover:border-buttonHover duration-300'
+                onClick={() => {
+                  document.documentElement.classList.add('scroll-animation');
+                  const headingElement = document.getElementById('output');
+                  if (headingElement) {
+                    headingElement.scrollIntoView({
+                      behavior: 'smooth',
+                      
+                    });
+                  }
+                  setTimeout(() => {
+                    document.documentElement.classList.remove('scroll-animation');
+                  }, 3000); 
+                }}>
+                  hotovo
                 </button>
                
               </div>
@@ -308,7 +320,7 @@ ${newShortDescription}
             </div>
                     
             <div className='h-1/2 flex justify-center items-start'>
-              <div className='bg-outputColor rounded-lg h-[400px] w-full overflow-auto px-6 text-whiteText'>
+              <div id='output' className='bg-outputColor rounded-lg h-[400px] w-full overflow-auto px-6 text-whiteText'>
               <pre>
                   <code ref={generatedReadmeRef}>
                     {generatedReadme}
