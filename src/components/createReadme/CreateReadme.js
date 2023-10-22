@@ -191,10 +191,10 @@ ${newShortDescription}
         {/* Náhled + tips for creating README*/}
         <div className='w-[100%] h-[100%] flex flex-row justify-center items-center pt-8 pb-24'>
               <div>
-                <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
+                <h2 data-aos="fade-left" id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
                   Tips for editing README:
                 </h2>
-                <p className='text-whiteText text-sm text-left pt-4'>
+                <p data-aos="fade-left" data-aos-delay="250" className='text-whiteText text-sm text-left pt-4'>
                   Pro <span className='font-bold'> zvýraznění textu</span> obklopte slovo dvěmi * např(**Nadpis**) <br/>
                   Pro vytvoření<span className='italic'> kurzívy</span> obklopte slovo jednou * např(*Jméno*) <br/>
                   Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
