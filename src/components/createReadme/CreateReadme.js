@@ -4,10 +4,18 @@ import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import 'font-awesome/css/font-awesome.min.css';
 import SmallTitle from '../../layouts/SmallTitle';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from 'react';
 
 
 
 function CreateReadme() {
+  // ------------------- Animace -------------------
+  useEffect(() => {
+    AOS.init({duration: "1000" });
+  },[])
+  // -----------------------------------------------
   const [title, setTitle] = useState('');
   const [shortDescription, setShortDescription] = useState('');
   const [author, setAuthor] = useState('');
@@ -172,13 +180,14 @@ ${newShortDescription}
     e.preventDefault(); 
     generateReadme(); 
   };
+  
 
   return (
     <div> 
       <div>
         {/* Náhled + tips for creating README*/}
         <div className='w-[100%] h-[100%] flex flex-row justify-center items-center pt-8 pb-24'>
-              <div>
+              <div className='bg-copiedColor' data-aos="fade-right">
                 <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
                   Tips for editing README:
                 </h2>
@@ -290,10 +299,13 @@ ${newShortDescription}
                 <div className='flex flex-row pt-6'>
                   <label className='relative cursor-pointer h-40 w-[850px]'>
                     <textarea
-                      rows='8'
+                      rows='4'
                       onChange={handleShortDescriptionChange}
-                      placeholder='Textarea'
-                      className='h-[128px] pl-4 w-full text-lg text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 animate-fade-in resize-none'
+                      placeholder={`Zde napište popis
+                                    stisknutím klávesy 'ENTER' začnete psát na nový řádek
+                                    Pokud se přidáte např: '##' vytvoříte tak nadpis <h2>`}
+                      className='h-[96px] px-1 pl-4 w-full text-lg text-whiteText bg-darkBg border-white border-2 pt-1 rounded-lg border-opacity-80 outline-none focus:border-buttonColor animate-fade-in resize-none'
+                      style={{ whiteSpace: 'pre-line' }}
                     ></textarea>
                   </label>
                 </div>
@@ -404,7 +416,7 @@ ${newShortDescription}
         
         </div>
         {/* Sekce pro zobrazení výstupu*/}
-        <div className='w-full laptop:pt-8 bigScreen:pt-24 h-[90%] mb-12 flex justify-center items-center'>
+        <div className='w-full laptop:pt-6 bigScreen:pt-24 h-[90%] mb-12 flex justify-center items-center'>
           <div className='w-2/3'>
             <div className='flex flex-row justify-between'>
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
