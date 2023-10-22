@@ -149,7 +149,7 @@ ${newShortDescription}
 
 <p align="left"> ${newLanguage} </p>
 
-<p align="left"> ${newAuthor} </p>
+**Autor**  <p align="left"> ${newAuthor} </p>
 <p align="left"> ${newVersion} </p>
 <p align="left"> ${newLicence} </p>
 <p align="left"> ${newLive} </p>
