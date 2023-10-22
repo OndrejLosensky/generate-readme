@@ -1,10 +1,18 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme');
+
+
 module.exports = {
   content: [
   "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-  extend: {},
+  extend: {
+    fontFamily: {
+      dancingScript: ['"Dancing Script"', ...defaultTheme.fontFamily.sans]
+    }
+  },
   colors: {
     darkBg: "#332F39",
     whiteText: "#ffffff",
