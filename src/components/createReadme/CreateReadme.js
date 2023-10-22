@@ -216,7 +216,7 @@ ${newShortDescription}
 
       </div>
     
-      <div className='pt-8 flex flex-row justify-center h-screen'>
+      <div className='pt-8 flex flex-row justify-center h-full'>
           {/* Levá část*/}
         
           {/* Pravá část*/}
@@ -239,19 +239,6 @@ ${newShortDescription}
                   </div>
                 </div>
                
-
-                 {/* TEXT AREA pro popisek */}
-                 <div className='pt-4'>
-                    <label className='relative cursor-pointer w-[850px]'>
-                      <input
-                        type='text'
-                        onChange={handleShortDescriptionChange}
-                        placeholder='Input'
-                        className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
-                      />
-                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Krátký popisek </span>
-                    </label>
-                </div>
 
                 {/* TŘETÍ ŘÁDEK */}
               
@@ -298,10 +285,21 @@ ${newShortDescription}
                     
                   </div>
                 </div>
-                
+                {/* POPISEK*/}
+                <Title text="Popisek"/>
+                <div className='flex flex-row pt-6'>
+                  <label className='relative cursor-pointer h-40 w-[850px]'>
+                    <textarea
+                      rows='8'
+                      onChange={handleShortDescriptionChange}
+                      placeholder='Textarea'
+                      className='h-[128px] pl-4 w-full text-lg text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 animate-fade-in resize-none'
+                    ></textarea>
+                  </label>
+                </div>
 
                 <Title text="další data"/>
-                {/* druhá sekce*/}
+                {/* další sekce*/}
                 <div className='flex flex-row pt-6'>
                   <div className='w-[48%]'>
                     <SmallTitle text="verze projektu"/>
@@ -396,8 +394,11 @@ ${newShortDescription}
               </div>
               
             </form>
-            <div className='text-white text-center absolute top-0 right-0 pr-8 pt-8'>
-            
+            <div className='text-whiteText text-xl text-center font-light pt-36'>
+                    <p> 
+                      You can find the output here <br/>
+                      Just click copy and then paste it to your README.MD
+                    </p>
             </div>
           </div>
         
@@ -430,7 +431,7 @@ ${newShortDescription}
             </div>
                     
             <div className='h-[500px] flex justify-center items-start'>
-              <div id='output' className='bg-outputColor rounded-lg h-[400px] w-full overflow-auto px-6 text-whiteText'>
+              <div id='output' className='bg-outputColor rounded-lg h-[500px] w-full overflow-auto px-6 text-whiteText'>
               <pre>
                   <code ref={generatedReadmeRef}>
                     {generatedReadme}
