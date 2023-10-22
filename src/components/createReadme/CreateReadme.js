@@ -82,11 +82,30 @@ function CreateReadme() {
     generateReadme(title, shortDescription, newAuthor, version1,date, license, contact); 
   };
 
+  const [selectedItem, setSelectedItem] = useState('1'); 
+
   const handleVersion1Change = (e) => {
-    const newVersion = e.target.value
-    setVersion1(newVersion);
-    generateReadme(title, shortDescription, author, newVersion, date, license, contact); 
+    const selectedOption = e.target.value;
+    let updatedVersion;
+
+    if (selectedOption === 'custom') {
+      const customVersion = prompt('Zadejte vlastní verzi:');
+      if (customVersion !== null) {
+        updatedVersion = customVersion;
+        setSelectedItem('custom');
+      } else {
+        updatedVersion = '1'; 
+        setSelectedItem('1'); 
+      }
+    } else {
+      updatedVersion = selectedOption;
+      setSelectedItem(selectedOption);
+    }
+
+    setVersion1(updatedVersion);
+    generateReadme(title, shortDescription, author, updatedVersion, date, license, contact);
   };
+  
 
   const handleDateChange = (e) => {
     const newDate = e.target.value
@@ -201,12 +220,16 @@ ${newShortDescription}
                   <div className='w-[8%]'></div>
                   <div className='w-[46%]'>
                     <Title text="Verze"/>
-                    <AddInput
-                    placeholder="Aktuální verze"
-                    value={version1}
-                    onChange={handleVersion1Change}
-                    type={"number"}
-                    />
+                    <select
+                      value={selectedItem}
+                      placeholder='vyberte aktuální verzi'
+                      onChange={handleVersion1Change}
+                      className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
+                      style={{ width: '300px', height: '45px' }}
+                    >
+                      <option value="1">1</option>
+                      <option value={selectedItem}> + přidat novou verzi</option>
+                    </select>
                   </div>
                 </div>
                 {/* ČTVRTÝ ŘÁDEK */}
@@ -223,12 +246,18 @@ ${newShortDescription}
                   <div className='w-[8%]'></div>
                   <div className='w-[46%]'>
                     <Title text="Licence"/>
-                    <AddInput
-                    placeholder="Typ licence"
-                    value={license}
-                    onChange={handleLicenseChange}
-                    type={"text"} // checkbox pro výběr licence
-                    />
+                    <select
+                      value={license}
+                      onChange={handleLicenseChange}
+                      className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
+                      style={{ width: '300px', height: '45px' }}
+                    >
+                      <option value="Žádná">Žádná </option>
+                      <option value="Open Software License 3.0">Open Software License 3.0</option>
+                      <option value="Apache license">Apache license 2.0</option>
+                      <option value="Creative Commons Zero v1.0 Universal">Creative Commons Zero v1.0 Universal</option>
+                      <option value="Eclipse Public License 2.0">Eclipse Public License 2.0</option>
+                    </select>
                   </div>
                 </div>
 
