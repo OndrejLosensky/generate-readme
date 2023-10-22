@@ -147,12 +147,12 @@ ${newShortDescription}
                 Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
                 Pro vytvoření <span className='text-buttonColor underline'> odkazu</span> vložte text-link do hranatých závorek a odkaz do kulatých <br/>
                 např. ([Klikni](https://link.com)) <br/>
-                # funguje jako heading tag --  # = h1 | ###### = h6
+                # funguje jako heading tag --  # = h1 | ###### = h6 <br/>
                 pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
               </p>
             </div>
             <div className='h-2/3'>
-              <p className='font-semibold text-whiteText text-left uppercase text-4xl '> 
+              <p className='pt-4 font-semibold text-whiteText text-left uppercase text-4xl '> 
                 náhled
               </p>
               <div className='text-left text-whiteText  justify-center mt-4 h-[70%]
