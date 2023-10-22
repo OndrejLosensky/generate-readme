@@ -154,7 +154,7 @@ ${newShortDescription}
 #### **Licence:** ####  ${newLicence} 
 #### **Live Demo:** ####  ${newLive} 
 #### **Kontakt:** ####   ${newContact}
-
+<p align="left"> **Kontakt:** ${newContact} </p>
 <p align="center"> název souboru: Readme.md |  datum vytvoření: ${newDate} </p>
 
     `;
