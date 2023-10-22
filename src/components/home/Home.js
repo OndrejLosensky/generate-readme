@@ -13,12 +13,7 @@ const Home = (props) => {
           <Header/>
           <ScrollProgressBar />
 
-          <div className="h-screen flex justify-center items-center bg-black">
-            <label className='relative cursor-pointer'>
-              <input type="text" placeholder="Input" className='h-20 w-96 px-6 text-4xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200' />
-              <span className='text-4xl text-whiteText text-opacity-80 bg-darkBg absolute left-5 top-5 px-1 transition duration-200 input-text'> test </span>
-            </label>
-          </div>
+       
 
           <div className='text-whiteText text-xl text-center justify-center font-light pt-60 font-roboto'>
             <p> Vítejte v generátoru README.MD </p>

@@ -208,16 +208,22 @@ ${newShortDescription}
             <h2 id='firstHeading' className='text-3xl text-center uppercase text-whiteText pb-2 pt-8'> Vyplň formulář</h2>
             <form className='flex flex-col items-center py-4' onSubmit={handleSubmit}>
               <div className='py-0'>
-                
+
                 <Title text="Název projektu:"/>
-                <div className='w-[850px] rounded-md'>
-                  <AddInput
-                    placeholder="Zde zadejte název"
-                    value={title}
-                    onChange={handleTitleChange}
-                    type={"text"}
-                  />
+                <div className='items-center'>
+                  <div className='w-[850px] py-2 items-left rounded-md '>
+                    <label className='relative cursor-pointer w-[850px]'>
+                      <input
+                        type='text'
+                        onChange={handleTitleChange}
+                        placeholder='Input'
+                        className='h-20 pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
+                      />
+                      <span className='text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4 top-0 px-2 transition duration-200 input-text'> Název projektu </span>
+                    </label>
+                  </div>
                 </div>
+               
 
                  {/* TEXT AREA pro popisek */}
                  <div>
