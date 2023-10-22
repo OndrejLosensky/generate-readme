@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import Title from "../../layouts/Title"
-import AddInput from '../input/AddInput';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
 import 'font-awesome/css/font-awesome.min.css';
@@ -204,12 +203,11 @@ ${newShortDescription}
           {/* Levá část*/}
         
           {/* Pravá část*/}
-          <div className='w-[75%] h-[80%] rounded-2xl'>
-            <h2 id='firstHeading' className='text-3xl text-center uppercase text-whiteText pb-2 pt-8'> Vyplň formulář</h2>
+          <div id='firstHeading' className='w-[75%] h-[80%] rounded-2xl'>
+            <Title text="Základní info"/>
             <form className='flex flex-col items-center py-4' onSubmit={handleSubmit}>
               <div className='py-0'>
 
-                <Title text="Název projektu:"/>
                 <div className='items-center'>
                   <div className='w-[850px] py-2 items-left rounded-md '>
                     <label className='relative cursor-pointer w-[850px]'>
@@ -217,73 +215,111 @@ ${newShortDescription}
                         type='text'
                         onChange={handleTitleChange}
                         placeholder='Input'
-                        className='h-20 pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
+                        className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
                       />
-                      <span className='text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4 top-0 px-2 transition duration-200 input-text'> Název projektu </span>
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Název projektu </span>
                     </label>
                   </div>
                 </div>
                
 
                  {/* TEXT AREA pro popisek */}
-                 <div>
-                  <Title text="Krátký popisek:"/>
-                  <textarea
-                  className="text-darkText resize-none bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
-                  placeholder="Krátký popisek"
-                  rows={3}
-                  value={shortDescription}
-                  onChange={handleShortDescriptionChange}
-                  >
-
-                  </textarea>
+                 <div className='pt-4'>
+                    <label className='relative cursor-pointer w-[850px]'>
+                      <input
+                        type='text'
+                        onChange={handleShortDescriptionChange}
+                        placeholder='Input'
+                        className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
+                      />
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Krátký popisek </span>
+                    </label>
                 </div>
 
                 {/* TŘETÍ ŘÁDEK */}
-                <div className='flex flex-row'>
+              
+                <div className='flex flex-row pt-6'>
+                  <div className='w-[48%]'> 
+                  <label className='relative cursor-pointer w-[850px]'>
+                      <input
+                        type='text'
+                        required
+                        onChange={handleContactChange}
+                        placeholder='Input'
+                        className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
+                      />
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Váš e-mail </span>
+                    </label>
+                  </div>
+                  <div className='w-[4%]'></div>
+                  <div className='w-[48%]'> 
+                    <label className='relative cursor-pointer w-[850px]'>
+                      <input
+                        type='text'
+                        onChange={handleLive}
+                        placeholder='Input'
+                        className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
+                      />
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Odkaz na live preview </span>
+                    </label>
+                  </div>
+                </div>
+                <div className='flex flex-row pt-6'>
                   <div className='w-[48%]'>
-                    <Title text="Autor"/>
-                    <AddInput
-                    placeholder="vaše jméno"
-                    value={author}
-                    onChange={handleAuthorChange}
-                    type={"text"}
-                    />
+                    <label className='relative cursor-pointer w-[850px]'>
+                      <input
+                        type='text'
+                        onChange={handleAuthorChange}
+                        placeholder='Input'
+                        className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
+                      />
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Autor </span>
+                    </label>
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
-                    <Title text="Verze"/>
-                    <select
+                    
+                  </div>
+                </div>
+                
+
+                <Title text="další data"/>
+                {/* druhá sekce*/}
+                <div className='flex flex-row pt-6'>
+                  <div>
+                  <select
                       value={selectedItem}
                       placeholder='vyberte aktuální verzi'
                       onChange={handleVersion1Change}
-                      className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
-                      style={{ width: '405px', height: '45px' }}
+                      className="px-2 text-whiteText bg-darkBg border-2 border-bg-white rounded-md py-2 w-full"
+                      style={{ width: '405px', height: '64px' }}
                     >
-                      <option value="1">1</option>
-                      <option value={selectedItem}> + přidat novou verzi</option>
+                      <option value=''> 1.0.0 </option>
+                      <option value='custom'> + přidat verzi</option>
                     </select>
                   </div>
                 </div>
-                {/* ČTVRTÝ ŘÁDEK */}
-                <div className=' flex flex-row'>
+
+                
+                {/* DRUHÝ ŘÁDEK */}
+                <div className=' flex flex-row pt-6'>
                   <div className='w-[48%]'>
-                    <Title text="Datum"/>
-                    <AddInput
-                    placeholder="Datum"
-                    value={date}
-                    onChange={handleDateChange}
-                    type={"date"}
+                  <label className='relative cursor-pointer w-[850px]'>
+                    <input
+                      type='date'
+                      onChange={handleDateChange}
+                      placeholder='Date'
+                      className='px-2 h-16 pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 animate-fade-in'
                     />
+                  </label>
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
-                    <Title text="Licence"/>
                     <select
                       value={license}
                       onChange={handleLicenseChange}
-                      className="text-darkText bg-transparent border-2 border-bg-white rounded-md px-2 py-2 w-full"
-                      style={{ width: '405px', height: '45px' }}
+                      className="text-whiteText bg-darkBg border-2 border-bg-white rounded-md px-2 py-2 w-full"
+                      style={{ width: '405px', height: '64px' }}
                     >
                       <option value="Žádná">Žádná </option>
                       <option value="Open Software License 3.0">Open Software License 3.0</option>
@@ -294,37 +330,13 @@ ${newShortDescription}
                   </div>
                 </div>
 
-                {/* Pátý řádek*/}
-                <div className='flex flex-row'>
-                  <div className='w-[48%]'> 
-                    <Title text="Kontakt"/>
-                    <AddInput
-                    placeholder="Váš e-mail"
-                    value={contact}
-                    onChange={handleContactChange}
-                    type={"email"}
-                    required
-                    />
-                  </div>
-                  <div className='w-[4%]'></div>
-                  <div className='w-[48%]'> 
-                    <Title text="Live preview"/>
-                    <AddInput
-                    placeholder="odkaz na live demo"
-                    value={live}
-                    onChange={handleLive}
-                    type={"link"}
-                    />
-                  </div>
-                </div>
-
                
 
 
               </div>
 
               {/* Tlačítko*/}
-              <div className='w-[850px] flex justify-end pt-2'>
+              <div className='w-[850px] flex justify-end pt-4'>
                 <button onClick={() => window.location.reload()} className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
                   Resetovat
                 </button>
