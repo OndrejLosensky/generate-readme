@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import Title from "../../layouts/Title"
+// eslint-disable-next-line
 import ReactMarkdown from 'react-markdown';
+// eslint-disable-next-line
 import gfm from 'remark-gfm';
 import 'font-awesome/css/font-awesome.min.css';
 import SmallTitle from '../../layouts/SmallTitle';
@@ -13,7 +15,7 @@ import { useEffect } from 'react';
 function CreateReadme() {
   // ------------------- Animace -------------------
   useEffect(() => {
-    AOS.init({duration: "1000" });
+    AOS.init({duration: "1600" });
   },[])
   // -----------------------------------------------
   const [title, setTitle] = useState('');
@@ -51,6 +53,7 @@ function CreateReadme() {
     }, 5000); // resetuje po 5 vteřinách
   };
 
+  // eslint-disable-next-line
   const centerAlignCSS = {
     textAlign: 'center',
   };
@@ -187,7 +190,7 @@ ${newShortDescription}
       <div>
         {/* Náhled + tips for creating README*/}
         <div className='w-[100%] h-[100%] flex flex-row justify-center items-center pt-8 pb-24'>
-              <div className='bg-copiedColor'>
+              <div>
                 <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
                   Tips for editing README:
                 </h2>
@@ -201,7 +204,7 @@ ${newShortDescription}
                   pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
                 </p>
               </div>
-
+              {/* 
               <div className='w-1/2 pl-12'>
                 <p className='pt-4 font-semibold text-whiteText text-left uppercase text-4xl '> 
                   náhled
@@ -213,14 +216,13 @@ ${newShortDescription}
                       <ReactMarkdown remarkPlugins={[gfm]}>
                         {generatedReadme}
                       </ReactMarkdown>
-                      {/* Center-align the last line */}
                       <div style={centerAlignCSS}>
-                        {/*<p>název souboru: Readme.md |  datum vytvoření: {date}</p>*/}
                       </div>
                     </div>
                   )}
                 </div>
               </div>
+              */}
         </div>
 
       </div>
@@ -407,7 +409,7 @@ ${newShortDescription}
               
             </form>
             <div id='outputSect' className='text-whiteText text-xl text-center font-light laptop:pt-16 bigScreen:pt-36'>
-                    <p> 
+                    <p data-aos="fade-right"> 
                       You can find the output here <br/>
                       Just click copy and then paste it to your README.MD
                     </p>
@@ -416,7 +418,7 @@ ${newShortDescription}
         
         </div>
         {/* Sekce pro zobrazení výstupu*/}
-        <div className='w-full laptop:pt-6 bigScreen:pt-24 h-[90%] mb-12 flex justify-center items-center'>
+        <div className='w-full laptop:pt-12 bigScreen:pt-24 h-[90%] mb-12 flex justify-center items-center'>
           <div className='w-2/3'>
             <div className='flex flex-row justify-between'>
               <h2 className='uppercase text-3xl font-semibold text-whiteText text-left py-4 flex-grow-1'> code with readme data </h2>
