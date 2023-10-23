@@ -20,11 +20,11 @@ const Hero = () => {
                   Vytvořte si soubor s názvem <span className="font-bold">'Readme.md'</span>, který uložte 
                   </p>
 
-                  <p data-aos="fade-right" data-aos-delay="400" className="pr-12 pt-[120px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">3</span> 
+                  <p data-aos="fade-right" data-aos-delay="600" className="pr-12 pt-[120px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">3</span> 
                   Vyplněním textu zahájíte tvorbu vašeho Readme.md 
                   </p>
 
-                  <p data-aos="fade-right" data-aos-delay="800" className="pr-12 pt-[150px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">5</span> 
+                  <p data-aos="fade-right" data-aos-delay="1200" className="pr-12 pt-[150px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">5</span> 
                   Zkopírujte text a vložte do vašeho souboru a máte to.
                   </p>
                  
@@ -33,11 +33,11 @@ const Hero = () => {
             {/*Pravá část*/}
 
             <div className="h-[100%] w-1/2 bg-darkBg border-l-2 border-whiteText ">
-                <p data-aos="fade-left" data-aos-delay="200" className="pl-12 pt-[100px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">2</span>
+                <p data-aos="fade-left" data-aos-delay="300" className="pl-12 pt-[100px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">2</span>
                  Po uložení se vraťte do této aplikace a začněte
                 </p>
 
-                <p data-aos="fade-left" data-aos-delay="600" className="pl-12 pt-[140px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">4</span>
+                <p data-aos="fade-left" data-aos-delay="900" className="pl-12 pt-[140px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">4</span>
                 Pro dokončení klikněte níže na tlačítko <span className="font-bold">'Hotovo'</span>
                 </p>
             </div>
