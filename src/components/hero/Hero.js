@@ -24,7 +24,7 @@ const Hero = () => {
                   Vyplněním textu zahájíte tvorbu vašeho Readme.md 
                   </p>
 
-                  <p data-aos="fade-right" data-aos-delay="600" className="pr-12 pt-[150px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">5</span> 
+                  <p data-aos="fade-right" data-aos-delay="800" className="pr-12 pt-[150px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">5</span> 
                   Zkopírujte text a vložte do vašeho souboru a máte to.
                   </p>
                  
