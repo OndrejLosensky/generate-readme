@@ -96,29 +96,36 @@ function CreateReadme() {
   };
 
   const [selectedItem, setSelectedItem] = useState('1'); 
+  const [customVersion, setCustomVersion] = useState('');
 
-  const handleVersion1Change = (e) => {
-    const selectedOption = e.target.value;
-    let updatedVersion;
+  const handleVersionChange = (event) => {
+    const value = event.target.value;
 
-    if (selectedOption === 'custom') {
-      const customVersion = prompt('Zadejte vlastní verzi:');
-      if (customVersion !== null) {
-        updatedVersion = customVersion;
-        setSelectedItem('custom');
+    if (value === 'custom') {
+      const customInput = window.prompt('Enter a custom version:');
+      if (customInput) {
+        setCustomVersion(customInput);
+        setSelectedItem(customInput);
+
+        // Add the custom version as a new <option>
+        const selectElement = event.target;
+        const customOption = document.createElement('option');
+        customOption.value = customInput;
+        customOption.text = customInput;
+        selectElement.appendChild(customOption);
+        generateReadme(title, shortDescription, author, customInput, date, license, contact, live,language)
       } else {
-        updatedVersion = '1'; 
-        setSelectedItem('1'); 
+        setSelectedItem('');
       }
     } else {
-      updatedVersion = selectedOption;
-      setSelectedItem(selectedOption);
+      setCustomVersion('');
+      setSelectedItem(value);
+      generateReadme(title, shortDescription, author, value, date, license, contact, live,language)
     }
 
-    setVersion1(updatedVersion);
-    generateReadme(title, shortDescription, author, updatedVersion, date, license, contact, live, language);
-  };
+    generateReadme(title, shortDescription, author, value, date, license, contact, live,language)
   
+  }
 
   const handleDateChange = (e) => {
     const newDate = e.target.value
@@ -152,7 +159,7 @@ function CreateReadme() {
   };
 
 
-  const generateReadme = (newTitle, newShortDescription, newAuthor, newVersion,newDate, newLicence, newContact, newLive, newLanguage) => {
+  const generateReadme = (newTitle, newShortDescription, newAuthor, customOption ,newDate, newLicence, newContact, newLive, newLanguage) => {
     const readmeContent = `
 # **${newTitle}** #
 
@@ -163,7 +170,7 @@ ${newShortDescription}
 <h3 align="left"> Autor </h3>
 <p> ${newAuthor} </p>
 <h3 align="left"> Verze </h3>
-<p align="left"> ${newVersion} </p>
+<p align="left"> ${customOption} </p>
 <h3 align="left">Licence </h3>
 <p align="left"> ${newLicence} </p>
 <h3 align="left"> Live Preview </h3>
@@ -304,13 +311,12 @@ ${newShortDescription}
                     <SmallTitle text="verze projektu"/>
                     <select
                       value={selectedItem}
-                      placeholder='vyberte aktuální verzi'
-                      onChange={handleVersion1Change}
-                      className="px-2 text-whiteText bg-darkBg border-2 border-bg-white rounded-md py-2 w-full"
+                      onChange={handleVersionChange}
+                      className="px-2 text-whiteText bg-darkBg border-2 border-bg-white rounded-xl py-2 w-full"
                       style={{ width: '405px', height: '64px' }}
                     >
-                      <option value=''> 1.0.0 </option>
-                      <option value='custom'> + přidat verzi</option>
+                      <option value="">1.0.0</option>
+                      <option value="custom">+ Přidat verzi</option>
                     </select>
                   </div>
                   <div className='w-[4%]'></div>
@@ -320,8 +326,8 @@ ${newShortDescription}
                         value="Vyber jazyk"
                         placeholder='vyberte jazyk'
                         onChange={handleLanguageChange}
-                        className="px-2 text-whiteText bg-darkBg border-2 border-bg-white rounded-md py-2 w-full"
-                        style={{ width: '405px', height: '64px' }}
+                        className="px-2 py-2 w-full border-2 border-whiteText rounded-xl"
+                        style={{ width: '405px', height: '64px', color: 'white', backgroundColor: '#332F39' }}
                       >
                         <option value='javascript'> JavaScript </option>
                         <option value='python'>Python</option>
@@ -341,7 +347,7 @@ ${newShortDescription}
                       type='date'
                       onChange={handleDateChange}
                       placeholder='Date'
-                      className='px-2 h-16 pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 animate-fade-in'
+                      className='px-2 h-16 pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-xl border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 animate-fade-in'
                     />
                   </label>
                   </div>
@@ -351,7 +357,7 @@ ${newShortDescription}
                     <select
                       value={license}
                       onChange={handleLicenseChange}
-                      className="text-whiteText bg-darkBg border-2 border-bg-white rounded-md px-2 py-2 w-full"
+                      className="text-whiteText bg-darkBg border-2 border-bg-white rounded-xl px-2 py-2 w-full"
                       style={{ width: '405px', height: '64px' }}
                     >
                       <option value="Žádná">Žádná </option>
