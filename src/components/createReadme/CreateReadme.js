@@ -215,8 +215,8 @@ ${newShortDescription}
                 </p>
               </div>
               <div className='w-1/2 text-center text-whiteText font-light'> 
-                    <h2 className='text-4xl font-cookie'> Jednoduché generování readme.md souboru </h2>
-                    <p className='font-light text-xl'> Vygenerujte si vaše readme během pár minut <br/> bez jakékoliv námahy </p>
+                    <h2 className='text-4xl font-cookie'> Simplified readme.md generating </h2>
+                    <p className='font-light text-xl'> Generate README for your profile or project <br/> quickly and withnout any hard work </p>
               </div>
         </div>
 
@@ -227,7 +227,7 @@ ${newShortDescription}
         
           {/* Pravá část*/}
           <div id='firstHeading' className='w-[75%] h-[80%] rounded-2xl'>
-            <Title text="Základní info"/>
+            <Title text="Basic Info"/>
             <form className='flex flex-col items-center py-4'>
               <div className='py-0'>
 
@@ -240,7 +240,7 @@ ${newShortDescription}
                         placeholder='Input'
                         className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
                       />
-                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Název projektu </span>
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Title for your project </span>
                     </label>
                   </div>
                 </div>
@@ -258,7 +258,7 @@ ${newShortDescription}
                         placeholder='Input'
                         className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
                       />
-                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Váš e-mail </span>
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Your e-mail </span>
                     </label>
                   </div>
                   <div className='w-[4%]'></div>
@@ -270,7 +270,7 @@ ${newShortDescription}
                         placeholder='Input'
                         className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
                       />
-                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Odkaz na live preview </span>
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Live preview link</span>
                     </label>
                   </div>
                 </div>
@@ -283,7 +283,7 @@ ${newShortDescription}
                         placeholder='Input'
                         className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
                       />
-                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Autor </span>
+                      <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Author </span>
                     </label>
                   </div>
                   <div className='w-[4%]'></div>
@@ -292,26 +292,26 @@ ${newShortDescription}
                   </div>
                 </div>
                 {/* POPISEK*/}
-                <Title text="Popisek"/>
+                <Title text="Description"/>
                 <div className='flex flex-row pt-6'>
                   <label className='relative cursor-pointer h-40 w-[850px]'>
                     <textarea
                       rows='4'
                       onChange={handleShortDescriptionChange}
-                      placeholder={`Zde napište popis
-                                    stisknutím klávesy 'ENTER' začnete psát na nový řádek
-                                    Pokud se přidáte např: '##' vytvoříte tak nadpis <h2>`}
+                      placeholder={`Type the description here
+                                    pressing 'ENTER' key you will be typing on next line
+                                    for example if you add: '##' you'll create: <h2>`}
                       className='h-[96px] px-1 pl-4 w-full text-lg text-whiteText bg-darkBg border-white border-2 pt-1 rounded-lg border-opacity-80 outline-none focus:border-buttonColor animate-fade-in resize-none'
                       style={{ whiteSpace: 'pre-line' }}
                     ></textarea>
                   </label>
                 </div>
 
-                <Title text="další data"/>
+                <Title text="More data"/>
                 {/* další sekce*/}
                 <div className='flex flex-row pt-2'>
                   <div className='w-[48%]'>
-                    <SmallTitle text="verze projektu"/>
+                    <SmallTitle text="Version of this project"/>
                     <select
                       value={selectedItem}
                       onChange={handleVersionChange}
@@ -324,7 +324,7 @@ ${newShortDescription}
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
-                    <SmallTitle text="Použitý jazyk"/>
+                    <SmallTitle text="Used Languages"/>
                     <select
                         value="Vyber jazyk"
                         placeholder='vyberte jazyk'
@@ -345,7 +345,7 @@ ${newShortDescription}
                 <div className=' flex flex-row pt-6'>
                   <div className='w-[48%]'>
                   <label className='relative cursor-pointer w-[850px]'>
-                    <SmallTitle text="Datum vytvoření"/>
+                    <SmallTitle text="Date"/>
                     <input
                       type='date'
                       onChange={handleDateChange}
@@ -356,14 +356,14 @@ ${newShortDescription}
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
-                    <SmallTitle text="Vyberte licenci"/>
+                    <SmallTitle text="License"/>
                     <select
                       value={license}
                       onChange={handleLicenseChange}
                       className="text-whiteText bg-darkBg border-2 border-bg-white rounded-xl px-2 py-2 w-full"
                       style={{ width: '405px', height: '64px' }}
                     >
-                      <option value="Žádná">Žádná </option>
+                      <option value="Žádná">None </option>
                       <option value="Open Software License 3.0">Open Software License 3.0</option>
                       <option value="Apache license">Apache license 2.0</option>
                       <option value="Creative Commons Zero v1.0 Universal">Creative Commons Zero v1.0 Universal</option>
@@ -376,7 +376,7 @@ ${newShortDescription}
             {/* Tlačítko*/}
             <div className='w-[960px] flex justify-end pt-4'>
                 <button onClick={() => window.location.reload()} className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
-                  Resetovat
+                  Reset
                 </button>
                 <button className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-xl hover:bg-buttonHover hover:border-buttonHover duration-300'
                 onClick={() => {
@@ -392,7 +392,7 @@ ${newShortDescription}
                     document.documentElement.classList.remove('scroll-animation');
                   }, 3000); 
                 }}>
-                  hotovo
+                  Done
                 </button>
                
               </div>

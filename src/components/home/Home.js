@@ -23,15 +23,15 @@ const Home = (props) => {
           <ScrollProgressBar />
           <div className='text-whiteText text-xl text-center justify-center font-light pt-[250px] font-roboto'>
             <div data-aos="fade-right">
-              <p > Vítejte v generátoru README.MD </p>
-              <p> jednoduchým způsobem vytvořte minimalistické readme pro vaše projekty </p>
-              <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
-              <p> můžete také přepínat styl vytvoření a vytvořit si tak přehledé README pro váš profil </p>
-              <p> šablona je velmi lehce upravitelná dle vašich potřeb</p>
+              <p > Welcome to README.MD generator </p>
+              <p> create simple and minimalistic readme's for your projects or profile with this app </p>
+              <p> by filling up the form, you get the data that just needs to be copied and then pasted </p>
+              <p> you can switch from Repository Readme to Profile and then create beautiful readme's </p>
+              <p> after copying you can simply just change it how do you like it.</p>
             </div>
             <div data-aos="fade-right" data-aos-delay="200" className='pt-4'>
               <button onClick={props.openDocumentation} className='px-6 py-3 border-buttonColor border-2 rounded-lg hover:-translate-y-1 duration-300'>
-                Dokumentace
+                Documentation
               </button>
               <button className='px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-lg ml-4 hover:-translate-y-1 duration-300'
               onClick={() => {
@@ -48,7 +48,7 @@ const Home = (props) => {
                 }, 3000); 
               }}
               >
-                Pokračovat
+                Continue
               </button>
             </div>
           </div>
