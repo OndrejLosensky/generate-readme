@@ -21,6 +21,7 @@ function CreateReadme() {
   const [title, setTitle] = useState('');
   const [shortDescription, setShortDescription] = useState('');
   const [author, setAuthor] = useState('');
+  // eslint-disable-next-line
   const [version1, setVersion1] = useState('');
   const [date, setDate] = useState('');
   const [license, setLicense] = useState('');
@@ -96,6 +97,7 @@ function CreateReadme() {
   };
 
   const [selectedItem, setSelectedItem] = useState('1'); 
+  // eslint-disable-next-line
   const [customVersion, setCustomVersion] = useState('');
 
   const handleVersionChange = (event) => {
