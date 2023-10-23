@@ -191,10 +191,10 @@ ${newShortDescription}
         {/* Náhled + tips for creating README*/}
         <div className='w-[100%] h-[100%] flex flex-row justify-center items-center pt-8 pb-24'>
               <div>
-                <h2 data-aos="fade-left" id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-4'>
+                <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-60'>
                   Tips for editing README:
                 </h2>
-                <p data-aos="fade-left" data-aos-delay="250" className='text-whiteText text-sm text-left pt-4'>
+                <p className='text-whiteText text-sm text-left pt-4'>
                   Pro <span className='font-bold'> zvýraznění textu</span> obklopte slovo dvěmi * např(**Nadpis**) <br/>
                   Pro vytvoření<span className='italic'> kurzívy</span> obklopte slovo jednou * např(*Jméno*) <br/>
                   Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
@@ -204,25 +204,7 @@ ${newShortDescription}
                   pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
                 </p>
               </div>
-              {/* 
-              <div className='w-1/2 pl-12'>
-                <p className='pt-4 font-semibold text-whiteText text-left uppercase text-4xl '> 
-                  náhled
-                </p>
-                <div className='text-left text-whiteText  justify-center mt-4 h-[70%]
-                rounded-md shadow-md shadow-whiteText bg-outputColor'>
-                  {generatedReadme && (
-                    <div className="markdown-content p-4">
-                      <ReactMarkdown remarkPlugins={[gfm]}>
-                        {generatedReadme}
-                      </ReactMarkdown>
-                      <div style={centerAlignCSS}>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-              */}
+          
         </div>
 
       </div>
@@ -409,9 +391,21 @@ ${newShortDescription}
               
             </form>
             <div id='outputSect' className='text-whiteText text-xl text-center font-light laptop:pt-16 bigScreen:pt-36'>
-                    <p data-aos="fade-right"> 
+                    <p className={`px-6 py-3 text-whiteText rounded-xl ${
+                  copied ? '' : ''
+                }`}> 
+                      
+                      {copied ? (
+                  <>
+                      <h2 className='text-2xl font-semibold'> THANKS FOR USING THIS APP!</h2>
+                      Come back again soon.
+                  </>
+                ) : (
+                  <>
                       You can find the output here <br/>
                       Just click copy and then paste it to your README.MD
+                  </>
+                )}
                     </p>
             </div>
           </div>

@@ -7,6 +7,7 @@ import "../../index.css"
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
+import Hero from "../hero/Hero";
 
 
 const Home = (props) => {
@@ -20,7 +21,7 @@ const Home = (props) => {
         <div>
           <Header/>
           <ScrollProgressBar />
-          <div className='text-whiteText text-xl text-center justify-center font-light pt-60 font-roboto'>
+          <div className='text-whiteText text-xl text-center justify-center font-light pt-[250px] font-roboto'>
             <div data-aos="fade-right">
               <p > Vítejte v generátoru README.MD </p>
               <p> jednoduchým způsobem vytvořte minimalistické readme pro vaše projekty </p>
@@ -35,7 +36,7 @@ const Home = (props) => {
               <button className='px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-lg ml-4 hover:-translate-y-1 duration-300'
               onClick={() => {
                 document.documentElement.classList.add('scroll-animation');
-                const headingElement = document.getElementById('firstHeading');
+                const headingElement = document.getElementById('tutorialHeading');
                 if (headingElement) {
                   headingElement.scrollIntoView({
                     behavior: 'smooth',
@@ -52,8 +53,11 @@ const Home = (props) => {
             </div>
           </div>
         </div>
-        <div id='firstBorder' className='w-[100%] border-b-2 mx-auto border-whiteText justify-center'></div>
+        <div id='firstBorder' className='w-[100%] mx-auto border-2 border-whiteText justify-center'></div>
       </div>
+        <div className="h-[900px] pt-4 flex flex-col">
+          <Hero/>
+        </div>
         <CreateReadme/>
         <Footer/>
     </section>

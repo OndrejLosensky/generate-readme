@@ -1,41 +1,69 @@
 import React from "react";
-import Header from "../header/Header";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import { useEffect } from 'react';
 
 const Hero = () => {
+
+    useEffect(() => {
+      AOS.init({duration: "1500" });
+    },[])
+
     return(
-      <div className='h-screen flex flex-col justify-between'>
-      <div>
-        <Header />
-        <div className='text-whiteText text-xl text-center justify-center font-light pt-60 animate-fade-in'>
-          <p className="font-dancingScript"> Vítejte v generátoru README.MD </p>
-          <p> jednoduchým způsobem vytvořte jednoduché readme pro vaše projekty </p>
-          <p> vyplněním formuláře se vám vygeneruje váš soubor, který stačí zkopírovat a vložit </p>
-          <div className='pt-4'>
-            <button className='px-6 py-3 border-buttonColor border-2 rounded-xl hover:-translate-y-1 duration-300'>
-              Dokumentace
-            </button>
-            <button
-              className='px-6 py-3 border-2 border-buttonColor bg-buttonColor rounded-xl ml-4 hover:-translate-y-1 duration-300'
-              onClick={() => {
-                document.documentElement.classList.add('scroll-animation');
-                const headingElement = document.getElementById('firstBorder');
-                if (headingElement) {
-                  headingElement.scrollIntoView({
-                    behavior: 'smooth',
-                  });
-                }
-                setTimeout(() => {
-                  document.documentElement.classList.remove('scroll-animation');
-                }, 3000);
-              }}
-            >
-              Pokračovat
-            </button>
-          </div>
+      <div className="h-[1100px] flex flex-col items-center justify-center pt-8">
+        <h2 id="tutorialHeading" className="text-4xl text-whiteText font-semibold text-center pb-4"> Jak postupovat </h2>
+        <div className="w-[80%] h-[700px] flex flex-row">
+            {/*Levá část*/}
+            <div className="h-[100%] w-1/2 bg-darkBg border-r-2 border-whiteText">
+              <div>
+                  <p data-aos="fade-right" data-aos-delay="00" className="pr-12 pt-[0px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">1</span> 
+                  Vytvořte si soubor s názvem <span className="font-bold">'Readme.md'</span>, který uložte 
+                  </p>
+
+                  <p data-aos="fade-right" data-aos-delay="400" className="pr-12 pt-[180px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">3</span> 
+                  Vyplněním textu zahájíte tvorbu vašeho Readme.md 
+                  </p>
+
+                  <p data-aos="fade-right" data-aos-delay="600" className="pr-12 pt-[180px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">5</span> 
+                  Zkopírujte text a vložte do vašeho souboru a máte to.
+                  </p>
+                 
+              </div>
+            </div>
+            {/*Pravá část*/}
+
+            <div className="h-[100%] w-1/2 bg-darkBg border-l-2 border-whiteText ">
+                <p data-aos="fade-left" data-aos-delay="200" className="pl-12 pt-[130px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">2</span>
+                 Po uložení se vraťte do této aplikace a začněte
+                </p>
+
+                <p data-aos="fade-left" data-aos-delay="600" className="pl-12 pt-[200px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">4</span>
+                Pro dokončení klikněte níže na tlačítko <span className="font-bold">'Hotovo'</span>
+                </p>
+            </div>
+            <div className="pt-16">
+            </div>
+        </div>
+        <div className="pt-8">
+          <button className="bg-buttonColor px-8 py-3 text-whiteText text-lg rounded-xl hover:-translate-y-1 duration-300"
+          onClick={() => {
+            document.documentElement.classList.add('scroll-animation');
+            const headingElement = document.getElementById('firstHeading');
+            if (headingElement) {
+              headingElement.scrollIntoView({
+                behavior: 'smooth',
+                
+              });
+            }
+            setTimeout(() => {
+              document.documentElement.classList.remove('scroll-animation');
+            }, 2000); 
+          }}
+          > Začít 
+          </button>
         </div>
       </div>
-      <div id='firstBorder' className='w-[100%] border-b-2 mx-auto border-whiteText justify-center'></div>
-    </div>
+     
     )
 }
 
