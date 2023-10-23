@@ -12,19 +12,19 @@ const Hero = () => {
     return(
       <div className="h-[1100px] flex flex-col items-center justify-center pt-8">
         <h2 id="tutorialHeading" className="text-4xl text-whiteText font-semibold text-center pb-4"> Jak postupovat </h2>
-        <div className="w-[80%] h-[700px] flex flex-row">
+        <div className="w-[80%] h-[500px] flex flex-row">
             {/*Levá část*/}
             <div className="h-[100%] w-1/2 bg-darkBg border-r-2 border-whiteText">
               <div>
-                  <p data-aos="fade-right" data-aos-delay="00" className="pr-12 pt-[0px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">1</span> 
+                  <p data-aos="fade-right" data-aos-delay="00" className="pr-12 pt-[0px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">1</span> 
                   Vytvořte si soubor s názvem <span className="font-bold">'Readme.md'</span>, který uložte 
                   </p>
 
-                  <p data-aos="fade-right" data-aos-delay="400" className="pr-12 pt-[180px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">3</span> 
+                  <p data-aos="fade-right" data-aos-delay="400" className="pr-12 pt-[120px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">3</span> 
                   Vyplněním textu zahájíte tvorbu vašeho Readme.md 
                   </p>
 
-                  <p data-aos="fade-right" data-aos-delay="600" className="pr-12 pt-[180px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">5</span> 
+                  <p data-aos="fade-right" data-aos-delay="600" className="pr-12 pt-[150px] text-right text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">5</span> 
                   Zkopírujte text a vložte do vašeho souboru a máte to.
                   </p>
                  
@@ -33,11 +33,11 @@ const Hero = () => {
             {/*Pravá část*/}
 
             <div className="h-[100%] w-1/2 bg-darkBg border-l-2 border-whiteText ">
-                <p data-aos="fade-left" data-aos-delay="200" className="pl-12 pt-[130px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">2</span>
+                <p data-aos="fade-left" data-aos-delay="200" className="pl-12 pt-[100px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">2</span>
                  Po uložení se vraťte do této aplikace a začněte
                 </p>
 
-                <p data-aos="fade-left" data-aos-delay="600" className="pl-12 pt-[200px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-8xl font-cookie">4</span>
+                <p data-aos="fade-left" data-aos-delay="600" className="pl-12 pt-[140px] text-left text-whiteText"> <span className="pr-2 text-whiteText text-6xl font-cookie">4</span>
                 Pro dokončení klikněte níže na tlačítko <span className="font-bold">'Hotovo'</span>
                 </p>
             </div>
