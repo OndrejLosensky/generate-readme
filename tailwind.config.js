@@ -30,6 +30,7 @@ module.exports = {
     copiedColor: "#66BD5F",
     outputColor: "#574D60",
     docsColor: "#EEEEEE",
+    captionColor: "#2159AB",
   }
   },
   plugins: [],

@@ -187,11 +187,11 @@ ${newShortDescription}
 
   return (
     <div> 
-      <div>
+      <div className='pt-36'>
         {/* Náhled + tips for creating README*/}
-        <div className='w-[100%] h-[100%] flex flex-row justify-center items-center pt-8 pb-24'>
-              <div>
-                <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-60'>
+        <div className='w-[100%] h-[50%] bg-captionColor shadow-xl flex flex-row justify-center items-center pt-12 pb-24'>
+              <div className='w-1/2 pl-48 text-center'>
+                <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-12'>
                   Tips for editing README:
                 </h2>
                 <p className='text-whiteText text-sm text-left pt-4'>
@@ -204,7 +204,10 @@ ${newShortDescription}
                   pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
                 </p>
               </div>
-          
+              <div className='w-1/2 text-center text-whiteText font-light'> 
+                    <h2 className='text-4xl font-cookie'> Jednoduché generování readme.md souboru </h2>
+                    <p className='font-light text-xl'> Vygenerujte si vaše readme během pár minut <br/> bez jakékoliv námahy </p>
+              </div>
         </div>
 
       </div>
