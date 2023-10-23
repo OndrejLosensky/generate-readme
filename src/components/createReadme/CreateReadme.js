@@ -186,11 +186,12 @@ ${newShortDescription}
     setGeneratedReadme(readmeContent);
   };
 
+  /*
   const handleSubmit = (e) => {
     e.preventDefault(); 
     generateReadme(); 
   };
-  
+  */
 
   return (
     <div> 
@@ -225,7 +226,7 @@ ${newShortDescription}
           {/* Pravá část*/}
           <div id='firstHeading' className='w-[75%] h-[80%] rounded-2xl'>
             <Title text="Základní info"/>
-            <form className='flex flex-col items-center py-4' onSubmit={handleSubmit}>
+            <form className='flex flex-col items-center py-4'>
               <div className='py-0'>
 
                 <div className='items-center'>
@@ -306,7 +307,7 @@ ${newShortDescription}
 
                 <Title text="další data"/>
                 {/* další sekce*/}
-                <div className='flex flex-row pt-6'>
+                <div className='flex flex-row pt-2'>
                   <div className='w-[48%]'>
                     <SmallTitle text="verze projektu"/>
                     <select
@@ -315,7 +316,7 @@ ${newShortDescription}
                       className="px-2 text-whiteText bg-darkBg border-2 border-bg-white rounded-xl py-2 w-full"
                       style={{ width: '405px', height: '64px' }}
                     >
-                      <option value="">1.0.0</option>
+                      <option value=""> Vyber verzi</option>
                       <option value="custom">+ Přidat verzi</option>
                     </select>
                   </div>
@@ -368,14 +369,10 @@ ${newShortDescription}
                     </select>
                   </div>
                 </div>
-
-               
-
-
-              </div>
-
-              {/* Tlačítko*/}
-              <div className='w-[850px] flex justify-end pt-4'>
+              </div>              
+            </form>
+            {/* Tlačítko*/}
+            <div className='w-[960px] flex justify-end pt-4'>
                 <button onClick={() => window.location.reload()} className='mx-2 text-whiteText px-6 py-3 border-2 border-buttonColor rounded-xl hover:bg-buttonHover duration-300'>
                   Resetovat
                 </button>
@@ -397,8 +394,6 @@ ${newShortDescription}
                 </button>
                
               </div>
-              
-            </form>
             <div id='outputSect' className='text-whiteText text-xl text-center font-light laptop:pt-16 bigScreen:pt-36'>
                     <p className={`px-6 py-3 text-whiteText rounded-xl ${
                   copied ? '' : ''
