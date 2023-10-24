@@ -235,8 +235,9 @@ function CreateReadme() {
   <p align="left"> ${newLive} </p>
   <h3 align="left">How can you contact me? </h3>
   <p align="left"> ${newContact} </p>
-  
-  ${selectedImagesContent}
+  <div align="left">
+    ${selectedImagesContent}
+  </div>
   
   <p align="center"> name of the file: Readme.md |  date of creating : ${newDate} </p>
   `;

@@ -32,7 +32,6 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
 
 
 .test {
-  content: "X";
   border: 2px solid greenyellow;
   border-radius: 10px;
 }
