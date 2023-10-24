@@ -2,13 +2,13 @@ import React from "react";
 import CreateReadme from "../createReadme/CreateReadme";
 import Footer from "../footer/Footer"
 import Header from "../header/Header";
+import ScrollImage from "../../assets/scroll-down.png"
 import ScrollProgressBar from "../scrollProgressBar/ScrollProgressBar";
 import "../../index.css"
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
 import Hero from "../hero/Hero";
-
 
 const Home = (props) => {
     useEffect(() => {
@@ -51,11 +51,16 @@ const Home = (props) => {
                 Continue
               </button>
             </div>
+            <div className="pt-44">
+                  <img alt="scroll" src={ScrollImage} className="mx-auto
+                  hover:-translate-y-1 duration-300 cursor-pointer" />
+                
+            </div>
           </div>
         </div>
-        <div id='firstBorder' className='w-[100%] mx-auto border-2 border-whiteText justify-center'></div>
+        <div id='firstBorder' className='w-[100%] mx-auto justify-center'></div>
       </div>
-        <div className="h-[900px] pt-4 flex flex-col">
+        <div className="h-[900px] pt-4 flex flex-col border-t-2 border-whiteText">
           <Hero/>
         </div>
         <CreateReadme/>

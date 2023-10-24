@@ -56,3 +56,7 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
 .title-animation {
   width: 100%;
 }
+
+.custom {
+  color: red;
+}
