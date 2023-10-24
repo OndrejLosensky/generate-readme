@@ -13,19 +13,32 @@ const Documentation = () => {
 
     return(
         <div className=" flex flex-col items-center">
-            <h2 className="text-5xl font-bold pt-2 uppercase "> dokumentace </h2>
+            <h2 className="text-5xl font-bold pt-2 uppercase "> Documentation </h2>
             {/* sekce s popiskem */}
-            <div className="pt-4">
+            <div className="pt-4 ">
                 <p className="text-center font-roboto">
-                    Vítejte v sekci dokumentace <br/>
-                    zde najdete jak tuto aplikaci používat a <br/> 
-                    jak kopírovat do vašeho readme souboru
+                    Welcome in the docs! <br/>
+                    Here you will find out more about how to use this app <br/> 
+                    and how to copy the output to your readme.md files etc. <br/>
+                    You can find out detailed explanation by clicking <a className="underline text-buttonHover" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes" target="_blank" rel="noopener noreferrer">Here</a>
                 </p>
-                <h3 className="pt-3 text-center text-3xl font-semibold"> Kroky jak postupovat </h3>
-                <p data-aos="fade-right"> <span className="text-left text-7xl font-black font-cookie pt-1"> 1 </span> vytvořte readme.md soubor ve vašem repository</p>
-                <p data-aos="fade-right" data-aos-delay="500"> <span className="text-right text-7xl font-black font-cookie pt-1"> 2 </span> vyplňte formulář v této aplikaci dle vašich potřeb</p>
-                <p data-aos="fade-right" data-aos-delay="1000"> <span className="text-left text-7xl font-black font-cookie pt-1"> 3 </span> klikněte na tlačítko kopírovat, které se nachází na spodní části</p>
-                <p data-aos="fade-right" data-aos-delay="1500"> <span className="text-left text-7xl font-black font-cookie pt-1"> 4 </span> vložte do vašeho README.md a obnovte stránku</p>
+            </div>
+            <div className="pt-12 flex flex-row w-[80%] h-[500px]">
+                <div className="w-1/2  text-center">     
+                    <h2 className="font-semibold text-2xl">How to edit README</h2>
+                    <p>
+
+                    </p>
+                </div>
+                <div className="font-semibold text-2xl w-1/2 text-center ">
+                    <h2>What to have in README</h2>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <div>
+
             </div>
         </div>
     )
