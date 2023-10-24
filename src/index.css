@@ -35,3 +35,24 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
   border: 2px solid greenyellow;
   border-radius: 10px;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animation-container {
+  display: flex;
+  width: 150%;
+  color: white;
+  animation: scroll 10s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+.title-animation {
+  width: 100%;
+}

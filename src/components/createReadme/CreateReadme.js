@@ -10,6 +10,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
 import "../../index.css"
+import HorizontalScroll from '../home/HorizontalScroll';
+import HorizontalAnimation from '../home/HorizontalAnimation';
 
 
 
@@ -264,34 +266,9 @@ function CreateReadme() {
     setGeneratedReadme(readmeContent);
   }
 
-
   return (
     <div> 
-      <div className='pt-36'>
-        {/* Náhled + tips for creating README*/}
-        <div className='w-[100%] h-[50%] bg-captionColor shadow-xl flex flex-row justify-center items-center pt-12 pb-24'>
-              <div className='w-1/2 pl-48 text-center'>
-                <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-12'>
-                  Tips for editing README:
-                </h2>
-                <p className='text-whiteText text-sm text-left pt-4'>
-                  Pro <span className='font-bold'> zvýraznění textu</span> obklopte slovo dvěmi * např(**Nadpis**) <br/>
-                  Pro vytvoření<span className='italic'> kurzívy</span> obklopte slovo jednou * např(*Jméno*) <br/>
-                  Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
-                  Pro vytvoření <span className='text-buttonColor underline'> odkazu</span> vložte text-link do hranatých závorek a odkaz do kulatých <br/>
-                  např. ([Klikni](https://link.com)) <br/>
-                  # funguje jako heading tag --  # = h1 | ###### = h6 <br/>
-                  pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
-                </p>
-              </div>
-              <div className='w-1/2 text-center text-whiteText font-light'> 
-                    <h2 className='text-4xl font-cookie'> Simplified readme.md generating </h2>
-                    <p className='font-light text-xl'> Generate README for your profile or project <br/> quickly and withnout any hard work </p>
-              </div>
-        </div>
-
-      </div>
-    
+     <HorizontalScroll/>
       <div className='pt-8 flex flex-row justify-center h-full'>
           {/* Levá část*/}
         
@@ -533,7 +510,7 @@ function CreateReadme() {
               </button>
               </div>
             </div>
-                    
+            {/* Vytvořit vzhled výstupu jako kdyby to bylo Visual Studio nebo podobné*/}        
             <div className='bigScreen:h-[500px] laptop:h-[400px] flex justify-center items-start'>
               <div id='output' className='bg-outputColor shadow-xl rounded-md laptop:h-[350px] bigScreen:h-[500px] w-full overflow-auto px-6 text-whiteText'>
               <pre>
