@@ -371,10 +371,19 @@ ${newShortDescription}
                     </select>
                   </div>
                 </div>
-                <div>
-                  <Title text="Choose a language:"/>
-                  <div className='bg-copiedColor w-16 h-16'>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40px" alt="javascript logo"  />
+                <div className='mx-auto h-[200px]'> 
+                  <p className='text-center pt-12 pb-6 uppercase font-bold text-whiteText text-3xl'> Choose a language <span className='text-xl pl-2 font-thin'> (You can select multiple)</span></p>
+                  <div className='flex flex-row mx-auto items-center justify-center gap-4 pt-4 w-16 h-16'>
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css3 logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40px" alt="javascript logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40px" alt="javascript logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="40" alt="tailwindcss logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40px" alt="javascript logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="40px" alt="javascript logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" height="40px" alt="javascript logo"  />
+                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo"  />
+                    
                   </div>
                 </div>
               </div>              
