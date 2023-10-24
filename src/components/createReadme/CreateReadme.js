@@ -371,19 +371,7 @@ function CreateReadme() {
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
-                    <SmallTitle text="Used Languages"/>
-                    <select
-                        value="Vyber jazyk"
-                        placeholder='vyberte jazyk'
-                        onChange={handleLanguageChange}
-                        className="px-2 py-2 w-full border-2 border-whiteText rounded-xl"
-                        style={{ width: '405px', height: '64px', color: 'white', backgroundColor: '#332F39' }}
-                      >
-                        <option value='javascript'> JavaScript </option>
-                        <option value='python'>Python</option>
-                        <option value='c#'>C#</option>
-                        <option value='swiftUI'>swiftUI</option>
-                      </select>
+                  
                   </div>
                 </div>
 
