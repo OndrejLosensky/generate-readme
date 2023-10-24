@@ -34,26 +34,20 @@ function CreateReadme() {
   const [selectedImages, setSelectedImages] = useState(new Array(imageUrls.length).fill(false));
 
   const handleClick = (index) => {
-    const imageUrl = imageUrls[index]; // Get the URL of the clicked image
-  
-    // Log the URL to the console (you can use it in your `generateReadme` function)
-    console.log('Clicked Image URL:', imageUrl);
-  
-    const newSelectedImages = [...selectedImages];
-    newSelectedImages[index] = !newSelectedImages[index];
-    setSelectedImages(newSelectedImages);
-  
-    // Add or remove the selected image URL based on its current state
-    if (newSelectedImages[index]) {
-      setSelectedImageUrls((prevSelectedImageUrls) => [...prevSelectedImageUrls, imageUrl]);
-    } else {
+    const imageUrl = imageUrls[index];
+
+    // Check if the image URL is already in the selectedImageUrls
+    if (selectedImageUrls.includes(imageUrl)) {
+      // If it's already in the list, remove it when clicked again
       setSelectedImageUrls((prevSelectedImageUrls) =>
         prevSelectedImageUrls.filter((url) => url !== imageUrl)
       );
+    } else {
+      // If it's not in the list, add it
+      setSelectedImageUrls((prevSelectedImageUrls) => [...prevSelectedImageUrls, imageUrl]);
     }
-  
-    // Call generateReadme with the image URL
-    generateReadme(title, shortDescription, author, version1, date, license, contact, live, language, selectedImageUrls, imageUrl);
+
+    generateReadme(title, shortDescription, author, version1, date, license, contact, live, language, selectedImageUrls);
   };
 
   // Konec sekce pro ikony // 
@@ -210,21 +204,12 @@ function CreateReadme() {
   };
 
 
-  const generateReadme = (
-    newTitle,
-    newShortDescription,
-    newAuthor,
-    customOption,
-    newDate,
-    newLicence,
-    newContact,
-    newLive,
-    newLanguage,
-    selectedImageUrls,
-    imageUrl
-  ) => {
-    const imageUrlsContent = selectedImageUrls ? selectedImageUrls.join('\n') : '';
-  
+  const generateReadme = (newTitle, newShortDescription, newAuthor, customOption, newDate, newLicence, newContact, newLive, newLanguage, selectedImageUrls) => {
+    // Create a string of image tags for selectedImageUrls
+    const selectedImagesContent = selectedImageUrls.map((imageUrl) => (
+      `<img alt="test" width="40" src="${imageUrl}" />`
+    )).join('\n');
+
     const readmeContent = `
   # **${newTitle}** #
   
@@ -243,11 +228,11 @@ function CreateReadme() {
   <h3 align="left">How can you contact me? </h3>
   <p align="left"> ${newContact} </p>
   
-  <img alt="test" width="40"  src=${imageUrlsContent} />
+  ${selectedImagesContent}
   
   <p align="center"> name of the file: Readme.md |  date of creating : ${newDate} </p>
   `;
-  
+
     setGeneratedReadme(readmeContent);
   };
 
