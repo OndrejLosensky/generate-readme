@@ -9,15 +9,11 @@ import SmallTitle from '../../layouts/SmallTitle';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from 'react';
+import "../../index.css"
 
 
 
 function CreateReadme() {
-  // ------------------- Animace -------------------
-  useEffect(() => {
-    AOS.init({duration: "1600" });
-  },[])
-  // -----------------------------------------------
   const imageUrls = [
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
@@ -30,12 +26,29 @@ function CreateReadme() {
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
   ];
+  // ------------------- Animace -------------------
+  useEffect(() => {
+    AOS.init({duration: "1600" });
+  },[])
+  // -----------------------------------------------
+  const initialSelectedImages = new Array(imageUrls.length).fill(false);
+  const [selectedImages2, setSelectedImages2] = useState(initialSelectedImages);
+
+
 
   const [selectedImages, setSelectedImages] = useState(new Array(imageUrls.length).fill(false));
 
   const handleClick = (index) => {
     const imageUrl = imageUrls[index];
+    const updatedSelectedImages = [...selectedImages2];
 
+    // Toggle the isSelected state for the clicked image
+    updatedSelectedImages[index] = !updatedSelectedImages[index];
+
+    // Update the state with the new array
+    setSelectedImages2(updatedSelectedImages);
+    // ---------------------------------------
+  
     // Check if the image URL is already in the selectedImageUrls
     if (selectedImageUrls.includes(imageUrl)) {
       // If it's already in the list, remove it when clicked again
@@ -46,10 +59,16 @@ function CreateReadme() {
       // If it's not in the list, add it
       setSelectedImageUrls((prevSelectedImageUrls) => [...prevSelectedImageUrls, imageUrl]);
     }
-
-    generateReadme(title, shortDescription, author, version1, date, license, contact, live, language, selectedImageUrls);
+  
+    // Log statements to check if handleClick is triggered and if test class is applied
+    console.log(`Selected Images: ${selectedImageUrls}`);
+    generateReadme(title, shortDescription, author, version1, date, license, contact, live, language);
   };
 
+  const selectedImageStyle = {
+    border: '2px solid green', // Add your desired styling here
+    borderRadius: '10px',
+  };
   // Konec sekce pro ikony // 
   const [title, setTitle] = useState('');
   const [shortDescription, setShortDescription] = useState('');
@@ -423,25 +442,25 @@ function CreateReadme() {
                   </div>
                 </div>
                 <div className="mx-auto h-[200px]">
-        <p className="text-center pt-12 pb-6 uppercase font-bold text-whiteText text-3xl">
-          Choose a language <span className="text-xl pl-2 font-thin"> (You can select multiple)</span>
-        </p>
-        <div className="flex flex-row gap-4">
-          {imageUrls.map((imageUrl, index) => (
-            <div
-              key={index}
-              className={`px-[8px] py-[8px] h-16 w-16 ${selectedImages[index] ? 'test' : ''}`}
-            >
-              <img
-                className="duration-300 hover:-translate-y-1"
-                src={imageUrl}
-                alt={`${index}`}
-                onClick={() => handleClick(index)}
-              />
-            </div>
-          ))}
-        </div>
+                  <p className="text-center pt-12 pb-6 uppercase font-bold text-whiteText text-3xl">
+                    Choose a language <span className="text-xl pl-2 font-thin"> (You can select multiple)</span>
+                  </p>
+                  <div className="flex flex-row gap-4">
+        {imageUrls.map((imageUrl, index) => (
+          <div
+            key={index}
+            className={`px-[8px] py-[8px] h-16 w-16 ${selectedImages[index] ? 'test' : ''}`}
+          >
+            <img
+              className="duration-300 hover:-translate-y-1"
+              src={imageUrl}
+              alt={`${index}`}
+              onClick={() => handleClick(index)}
+            />
+          </div>
+        ))}
       </div>
+                </div>
               </div>              
             </form>
             {/* Tlačítko*/}
