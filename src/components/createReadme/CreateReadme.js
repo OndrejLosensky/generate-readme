@@ -169,8 +169,7 @@ function CreateReadme() {
   
   }
 
-  const [selectedImageUrls, setSelectedImageUrls] = useState([]); // Initialize with an empty array
-
+  const [selectedImageUrls, setSelectedImageUrls] = useState([]);
 
   const handleDateChange = (e) => {
     const newDate = e.target.value
@@ -204,8 +203,17 @@ function CreateReadme() {
   };
 
 
-  const generateReadme = (newTitle, newShortDescription, newAuthor, customOption, newDate, newLicence, newContact, newLive, newLanguage, selectedImageUrls) => {
-    // Create a string of image tags for selectedImageUrls
+  const generateReadme = (
+    newTitle,
+    newShortDescription,
+    newAuthor,
+    customOption,
+    newDate,
+    newLicence,
+    newContact,
+    newLive,
+    newLanguage
+  ) => {
     const selectedImagesContent = selectedImageUrls.map((imageUrl) => (
       `<img alt="test" width="40" src="${imageUrl}" />`
     )).join('\n');
@@ -227,14 +235,14 @@ function CreateReadme() {
   <p align="left"> ${newLive} </p>
   <h3 align="left">How can you contact me? </h3>
   <p align="left"> ${newContact} </p>
-  <div align="center">
-    ${selectedImagesContent}
-  </div>
+  
+  ${selectedImagesContent}
+  
   <p align="center"> name of the file: Readme.md |  date of creating : ${newDate} </p>
   `;
 
     setGeneratedReadme(readmeContent);
-  };
+  }
 
 
   return (
@@ -414,25 +422,25 @@ function CreateReadme() {
                   </div>
                 </div>
                 <div className="mx-auto h-[200px]">
-                  <p className="text-center pt-12 pb-6 uppercase font-bold text-whiteText text-3xl">
-                    Choose a language <span className="text-xl pl-2 font-thin"> (You can select multiple)</span>
-                  </p>
-                  <div className="flex flex-row gap-4">
-                    {imageUrls.map((imageUrl, index) => (
-                      <div
-                        key={index}
-                        className={`px-[8px] py-[8px] h-16 w-16 ${selectedImages[index] ? 'test' : ''}`}
-                      >
-                        <img
-                          className="duration-300 hover:-translate-y-1"
-                          src={imageUrl}
-                          alt={`${index}`}
-                          onClick={() => handleClick(index)}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
+        <p className="text-center pt-12 pb-6 uppercase font-bold text-whiteText text-3xl">
+          Choose a language <span className="text-xl pl-2 font-thin"> (You can select multiple)</span>
+        </p>
+        <div className="flex flex-row gap-4">
+          {imageUrls.map((imageUrl, index) => (
+            <div
+              key={index}
+              className={`px-[8px] py-[8px] h-16 w-16 ${selectedImages[index] ? 'test' : ''}`}
+            >
+              <img
+                className="duration-300 hover:-translate-y-1"
+                src={imageUrl}
+                alt={`${index}`}
+                onClick={() => handleClick(index)}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
               </div>              
             </form>
             {/* Tlačítko*/}
