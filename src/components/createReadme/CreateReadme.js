@@ -18,6 +18,45 @@ function CreateReadme() {
     AOS.init({duration: "1600" });
   },[])
   // -----------------------------------------------
+  const imageUrls = [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+  ];
+
+  const [selectedImages, setSelectedImages] = useState(new Array(imageUrls.length).fill(false));
+
+  const handleClick = (index) => {
+    const imageUrl = imageUrls[index]; // Get the URL of the clicked image
+  
+    // Log the URL to the console (you can use it in your `generateReadme` function)
+    console.log('Clicked Image URL:', imageUrl);
+  
+    const newSelectedImages = [...selectedImages];
+    newSelectedImages[index] = !newSelectedImages[index];
+    setSelectedImages(newSelectedImages);
+  
+    // Add or remove the selected image URL based on its current state
+    if (newSelectedImages[index]) {
+      setSelectedImageUrls((prevSelectedImageUrls) => [...prevSelectedImageUrls, imageUrl]);
+    } else {
+      setSelectedImageUrls((prevSelectedImageUrls) =>
+        prevSelectedImageUrls.filter((url) => url !== imageUrl)
+      );
+    }
+  
+    // Call generateReadme with the image URL
+    generateReadme(title, shortDescription, author, version1, date, license, contact, live, language, selectedImageUrls, imageUrl);
+  };
+
+  // Konec sekce pro ikony // 
   const [title, setTitle] = useState('');
   const [shortDescription, setShortDescription] = useState('');
   const [author, setAuthor] = useState('');
@@ -62,18 +101,25 @@ function CreateReadme() {
 
   const defaultReadmeContent = `
 
-  ###  Krátký popisek: ###
+  # **** #
 
-  ###  **Autor:** ###
-
-
-  ### **Verze:** ###
-
-        
-  ###  **Licence:** ###
-
-
-  ### **Kontakt:** ###
+  
+  <h3 align="left"> Languages used in this repository </h3>
+  <p align="left"></p> 
+  <h3 align="left"> Author</h3>
+  <p>  </p>
+  <h3 align="left"> Version </h3>
+  <p align="left">  </p>
+  <h3 align="left">License </h3>
+  <p align="left"> </p>
+  <h3 align="left"> Live Preview </h3>
+  <p align="left">  </p>
+  <h3 align="left">How can you contact me? </h3>
+  <p align="left">  </p>
+  
+  
+  <p align="center"> name of the file: Readme.md |  date of creating :</p>
+  
     `;
 
   const [generatedReadme, setGeneratedReadme] = useState(defaultReadmeContent);
@@ -129,6 +175,9 @@ function CreateReadme() {
   
   }
 
+  const [selectedImageUrls, setSelectedImageUrls] = useState([]); // Initialize with an empty array
+
+
   const handleDateChange = (e) => {
     const newDate = e.target.value
     setDate(newDate);
@@ -161,39 +210,47 @@ function CreateReadme() {
   };
 
 
-  const generateReadme = (newTitle, newShortDescription, newAuthor, customOption ,newDate, newLicence, newContact, newLive, newLanguage) => {
+  const generateReadme = (
+    newTitle,
+    newShortDescription,
+    newAuthor,
+    customOption,
+    newDate,
+    newLicence,
+    newContact,
+    newLive,
+    newLanguage,
+    selectedImageUrls,
+    imageUrl
+  ) => {
+    const imageUrlsContent = selectedImageUrls ? selectedImageUrls.join('\n') : '';
+  
     const readmeContent = `
-# **${newTitle}** #
-
-${newShortDescription} 
-
-<h3 align="left"> Languages used in this repository </h3>
-<p align="left"> ${newLanguage} </p> 
-<h3 align="left"> Author</h3>
-<p> ${newAuthor} </p>
-<h3 align="left"> Version </h3>
-<p align="left"> ${customOption} </p>
-<h3 align="left">License </h3>
-<p align="left"> ${newLicence} </p>
-<h3 align="left"> Live Preview </h3>
-<p align="left"> ${newLive} </p>
-<h3 align="left">How can you contact me? </h3>
-<p align="left"> ${newContact} </p>
-
-
-<p align="center"> name of the file: Readme.md |  date of creating : ${newDate} </p>
-
-    `;
+  # **${newTitle}** #
+  
+  ${newShortDescription} 
+  
+  <h3 align="left"> Languages used in this repository </h3>
+  <p align="left"> ${newLanguage} </p> 
+  <h3 align="left"> Author</h3>
+  <p> ${newAuthor} </p>
+  <h3 align="left"> Version </h3>
+  <p align="left"> ${customOption} </p>
+  <h3 align="left">License </h3>
+  <p align="left"> ${newLicence} </p>
+  <h3 align="left"> Live Preview </h3>
+  <p align="left"> ${newLive} </p>
+  <h3 align="left">How can you contact me? </h3>
+  <p align="left"> ${newContact} </p>
+  
+  <img alt="test" width="40"  src=${imageUrlsContent} />
+  
+  <p align="center"> name of the file: Readme.md |  date of creating : ${newDate} </p>
+  `;
   
     setGeneratedReadme(readmeContent);
   };
 
-  /*
-  const handleSubmit = (e) => {
-    e.preventDefault(); 
-    generateReadme(); 
-  };
-  */
 
   return (
     <div> 
@@ -371,19 +428,24 @@ ${newShortDescription}
                     </select>
                   </div>
                 </div>
-                <div className='mx-auto h-[200px]'> 
-                  <p className='text-center pt-12 pb-6 uppercase font-bold text-whiteText text-3xl'> Choose a language <span className='text-xl pl-2 font-thin'> (You can select multiple)</span></p>
-                  <div className='flex flex-row mx-auto items-center justify-center gap-4 pt-4 w-16 h-16'>
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css3 logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40px" alt="javascript logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40px" alt="javascript logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="40" alt="tailwindcss logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40px" alt="javascript logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="40px" alt="javascript logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" height="40px" alt="javascript logo"  />
-                    <img className='hover:-translate-y-1 duration-300' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo"  />
-                    
+                <div className="mx-auto h-[200px]">
+                  <p className="text-center pt-12 pb-6 uppercase font-bold text-whiteText text-3xl">
+                    Choose a language <span className="text-xl pl-2 font-thin"> (You can select multiple)</span>
+                  </p>
+                  <div className="flex flex-row gap-4">
+                    {imageUrls.map((imageUrl, index) => (
+                      <div
+                        key={index}
+                        className={`px-[8px] py-[8px] h-16 w-16 ${selectedImages[index] ? 'test' : ''}`}
+                      >
+                        <img
+                          className="duration-300 hover:-translate-y-1"
+                          src={imageUrl}
+                          alt={`${index}`}
+                          onClick={() => handleClick(index)}
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>              
