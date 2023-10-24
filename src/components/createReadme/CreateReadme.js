@@ -371,6 +371,12 @@ ${newShortDescription}
                     </select>
                   </div>
                 </div>
+                <div>
+                  <Title text="Choose a language:"/>
+                  <div className='bg-copiedColor w-16 h-16'>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40px" alt="javascript logo"  />
+                  </div>
+                </div>
               </div>              
             </form>
             {/* Tlačítko*/}
@@ -445,7 +451,7 @@ ${newShortDescription}
             </div>
                     
             <div className='bigScreen:h-[500px] laptop:h-[400px] flex justify-center items-start'>
-              <div id='output' className='bg-outputColor rounded-lg laptop:h-[350px] bigScreen:h-[500px] w-full overflow-auto px-6 text-whiteText'>
+              <div id='output' className='bg-outputColor shadow-xl rounded-md laptop:h-[350px] bigScreen:h-[500px] w-full overflow-auto px-6 text-whiteText'>
               <pre>
                   <code ref={generatedReadmeRef}>
                     {generatedReadme}
