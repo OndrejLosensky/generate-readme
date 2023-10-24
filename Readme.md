@@ -16,9 +16,7 @@
   <h3 align="left">How can you contact me? </h3>
   <p align="left"> losenskyondrej@gmail.com </p>
   
-  <img alt="test" width="40"  src=https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg
-https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg
-https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg />
+  <img alt="test" width="40"  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
   
   <p align="center"> name of the file: Readme.md |  date of creating : 2023-10-26 </p>
   
