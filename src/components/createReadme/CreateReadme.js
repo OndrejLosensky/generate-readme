@@ -335,7 +335,15 @@ function CreateReadme() {
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
-                    
+                    <label className='relative cursor-pointer w-[850px]'>
+                        <input
+                          type='text'
+                          onChange={handleVersionChange}
+                          placeholder='Input'
+                          className='h-16  pl-4 w-full text-xl text-whiteText bg-darkBg border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-buttonColor placeholder-copiedColor placeholder-opacity-0 transition duration-200'
+                        />
+                        <span className='mt-4 text-lg text-whiteText text-opacity-80 bg-darkBg absolute left-4  px-2 transition duration-200 input-text'> Version of the project</span>
+                    </label>
                   </div>
                 </div>
                 {/* POPISEK*/}
@@ -345,9 +353,7 @@ function CreateReadme() {
                     <textarea
                       rows='4'
                       onChange={handleShortDescriptionChange}
-                      placeholder={`Type the description here
-                                    pressing 'ENTER' key you will be typing on next line
-                                    for example if you add: '##' you'll create: <h2>`}
+                      placeholder={`Type the description here`}
                       className='h-[96px] px-1 pl-4 w-full text-lg text-whiteText bg-darkBg border-white border-2 pt-1 rounded-lg border-opacity-80 outline-none focus:border-buttonColor animate-fade-in resize-none'
                       style={{ whiteSpace: 'pre-line' }}
                     ></textarea>
@@ -358,16 +364,7 @@ function CreateReadme() {
                 {/* další sekce*/}
                 <div className='flex flex-row pt-2'>
                   <div className='w-[48%]'>
-                    <SmallTitle text="Version of this project"/>
-                    <select
-                      value={selectedItem}
-                      onChange={handleVersionChange}
-                      className="px-2 text-whiteText bg-darkBg border-2 border-bg-white rounded-xl py-2 w-full"
-                      style={{ width: '405px', height: '64px' }}
-                    >
-                      <option value=""> Vyber verzi</option>
-                      <option value="custom">+ Přidat verzi</option>
-                    </select>
+            
                   </div>
                   <div className='w-[4%]'></div>
                   <div className='w-[48%]'>
@@ -486,13 +483,13 @@ function CreateReadme() {
               >
                 {copied ? (
                   <>
-                    <i className="fa fa-check" /> {/* Font Awesome checkmark icon */}
-                    Zkopírováno
+                    <i className="fa fa-check" /> 
+                    Copied
                   </>
                 ) : (
                   <>
-                    <i className="fa fa-copy" /> {/* Font Awesome copy icon */}
-                    Kopírovat
+                    <i className="fa fa-copy" /> 
+                    Copy
                   </>
                 )}
               </button>

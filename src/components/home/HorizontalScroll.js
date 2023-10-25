@@ -11,15 +11,15 @@ const HorizontalScroll = () => {
             <h2 id="firstSection" className= 'text-xl font-semibold text-whiteText text-left pt-12'>
               Tips for editing README:
             </h2>
-            <p className='text-whiteText text-sm text-left pt-4'>
-              Pro <span className='font-bold'> zvýraznění textu</span> obklopte slovo dvěmi * např(**Nadpis**) <br/>
-              Pro vytvoření<span className='italic'> kurzívy</span> obklopte slovo jednou * např(*Jméno*) <br/>
-              Pro vytvoření <span className='line-through'> přeškrtnutého textu</span> obklopte slovo s dvěmi ~ např(~~Popisek~~) <br/>
-              Pro vytvoření <span className='text-buttonColor underline'> odkazu</span> vložte text-link do hranatých závorek a odkaz do kulatých <br/>
-              např. ([Klikni](https://link.com)) <br/>
-              # funguje jako heading tag --  # = h1 | ###### = h6 <br/>
-              pro vytvoření více řádků, pro nový řádek stiskněte "ENTER"
-            </p>
+            <div>
+              <p className='text-whiteText text-sm text-left pt-4'>
+                For <span className='font-bold'>highlighting text</span> surround the word with two asterisks (**) <br/>
+                To create <span className='italic'>italics</span>, surround the word with a single asterisk (*) <br/>
+                To create <span className='line-through'>strikethrough text</span>, surround the word with two tildes (~)<br/>
+                To create a <span className='text-buttonColor underline'>link</span>, place the text-link in square brackets and the link in round brackets for example ([Click](https://link.com)) <br/>
+                # works as a heading tag | # == h1 <br/>
+              </p>
+            </div>
           </div>
           <div className='w-1/2 text-center text-whiteText font-light'> 
                 <h2 className='text-4xl font-cookie'> Simplified readme.md generating </h2>

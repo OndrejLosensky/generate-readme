@@ -32,7 +32,7 @@ function App() {
     <section style={{ display: 'flex', overflow: 'hidden' }}>
       {showDocumentation && (
         <div className='pl-4 pt-4 ' style={documentationStyles}>
-          <button className='px-4 py-2 border-2 border-darkBg rounded-xl' onClick={toggleDocumentation}> Zavřít </button>
+          <button className='px-4 py-2 border-2 border-darkBg rounded-xl' onClick={toggleDocumentation}> Close </button>
           
           <Documentation />
         </div>

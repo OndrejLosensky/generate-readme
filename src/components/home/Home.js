@@ -24,10 +24,10 @@ const Home = (props) => {
           <div className='text-whiteText text-xl text-center justify-center font-light pt-[250px] font-roboto'>
             <div data-aos="fade-right">
               <p > Welcome to README.MD generator </p>
-              <p> create simple and minimalistic readme's for your projects or profile with this app </p>
+              <p> create simple and minimalistic readme's for your projects with this app </p>
               <p> by filling up the form, you get the data that just needs to be copied and then pasted </p>
-              <p> you can switch from Repository Readme to Profile and then create beautiful readme's </p>
-              <p> after copying you can simply just change it how do you like it.</p>
+              <p> you can switch from Repository Readme to documentatipm to check full docs <br/> and then create beautiful readme's for your projects.  <br/> After copying you can simply just change it how do you like it.  </p>
+
             </div>
             <div data-aos="fade-right" data-aos-delay="200" className='pt-4'>
               <button onClick={props.openDocumentation} className='px-6 py-3 border-buttonColor border-2 rounded-lg hover:-translate-y-1 duration-300'>
@@ -51,7 +51,7 @@ const Home = (props) => {
                 Continue
               </button>
             </div>
-            <div className="pt-44">
+            <div className="pt-40">
                   <img alt="scroll" src={ScrollImage} className="mx-auto
                   hover:-translate-y-1 duration-300 cursor-pointer" onClick={() => {
                     document.documentElement.classList.add('scroll-animation');
