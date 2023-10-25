@@ -53,7 +53,19 @@ const Home = (props) => {
             </div>
             <div className="pt-44">
                   <img alt="scroll" src={ScrollImage} className="mx-auto
-                  hover:-translate-y-1 duration-300 cursor-pointer" />
+                  hover:-translate-y-1 duration-300 cursor-pointer" onClick={() => {
+                    document.documentElement.classList.add('scroll-animation');
+                    const headingElement = document.getElementById('firstHeading');
+                    if (headingElement) {
+                      headingElement.scrollIntoView({
+                        behavior: 'smooth',
+                        
+                      });
+                    }
+                    setTimeout(() => {
+                      document.documentElement.classList.remove('scroll-animation');
+                    }, 5000); 
+                  }}/>
                 
             </div>
           </div>

@@ -247,7 +247,7 @@ function CreateReadme() {
   <h3 align="left"> Languages used in this repository </h3>
   <p align="left"> ${newLanguage} </p> 
   <h3 align="left"> Author</h3>
-  <p> ${newAuthor} </p>
+  <p align="left"> ${newAuthor} </p>
   <h3 align="left"> Version </h3>
   <p align="left"> ${customOption} </p>
   <h3 align="left">License </h3>
