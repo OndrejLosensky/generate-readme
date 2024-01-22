@@ -1,22 +1,27 @@
+# Generate-readme
 
-  # **GENERATE-README** #
-  
-  This is simple readme generator for your projects. Add title, contact, information about language you used, version of it and more, when you copy it you can also edit as you need. 
-  
+**This is simple app created in React.js and styled with TailwindCSS. It is just to generate very basic readme.md files for your projects. Sadly you need to still modify it, because it's still in the development, so it doesnt work as it should be.**
 
-  <h3 align="left"> Author</h3>
-  <p align="left"> OndrejLosensky </p>
 
-  <h3 align="left">License </h3>
-  <p align="left"> Open Software License 3.0 </p>
- 
 
-  <h3> Languages & tools used: </h3>
-  <div align="left">
-    <img alt="test" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
-    <img alt="test" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-    <img alt="test" width="40" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" />
-  </div>
-  
-  <p align="center"> name of the file: Readme.md |  date of creating : 2023-10-25 </p>
-  
+## Preview
+
+
+
+## License
+
+This project is licensed under the Open Software License 3.0
+
+## Authors
+
+* Ondrej Losensky
+
+## Languages & Tools Used
+
+* Link to JavaScript: [https://www.javascript.com/](https://www.javascript.com/)
+* Link to React: [https://reactjs.org/](https://reactjs.org/)
+* Link to Tailwind CSS: [https://tailwindcss.com/](https://tailwindcss.com/)
+
+## Project Creation Date
+
+* Created on: 2023-10-25
