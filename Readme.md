@@ -5,11 +5,18 @@
 
 
 ## Preview
+<img width="1680" alt="Snímek obrazovky 2024-02-08 v 19 51 59" src="https://github.com/OndrejLosensky/generate-readme/assets/127244546/9d652b33-4cc5-4178-bd4e-e791b3832352">
+
+<img width="1677" alt="Snímek obrazovky 2024-02-08 v 19 52 35" src="https://github.com/OndrejLosensky/generate-readme/assets/127244546/d156ec7a-0e31-46b0-9f7a-fa861ec717dd">
+
+<img width="1676" alt="Snímek obrazovky 2024-02-08 v 19 52 49" src="https://github.com/OndrejLosensky/generate-readme/assets/127244546/b429ade4-f432-44d4-a7b4-ba6d90c61cd1">
+
+<img width="1680" alt="Snímek obrazovky 2024-02-08 v 19 52 58" src="https://github.com/OndrejLosensky/generate-readme/assets/127244546/6f555c0d-c0ed-4611-b715-79c51488569e">
+
+<img width="1680" alt="Snímek obrazovky 2024-02-08 v 19 53 08" src="https://github.com/OndrejLosensky/generate-readme/assets/127244546/d4ed84c4-43ea-4797-9c34-a561717a9510">
 
 
-
-## License
-
+## Licence
 This project is licensed under the Open Software License 3.0
 
 ## Authors
